@@ -115,8 +115,11 @@ console.log('-----');
 let weight = '88,3';
 let height = '1.75';
 
-const weightInt = Number(prompt('Введіть вагу в кілограмах').replace(',', '.'));
-const heightInt = Number(prompt('Введіть зріст в метрах').replace(',', '.'));
+const weightInt = Number(weight.replace(',', '.'));
+const heightInt = Number(height.replace(',', '.'));
+
+// const weightInt = Number(prompt('Введіть вагу в кілограмах').replace(',', '.'));
+// const heightInt = Number(prompt('Введіть зріст в метрах').replace(',', '.'));
 
 console.log('heightInt = ', heightInt);
 console.log('weightInt = ', weightInt);
