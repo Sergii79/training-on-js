@@ -138,7 +138,7 @@ console.log('-----');
 // ## Example 7 - Оператори порівняння та приведення типів
 
 // Яким буде результат виразів?
-console.log('\n==============');
+// console.log('\n==============');
 console.log(5 > 4); // true
 console.log(10 >= '7'); // true.
 console.log('2' > '12'); // true. String порівнюються посимвольно по коду символа. Як отримати код символа https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
@@ -159,6 +159,8 @@ console.log('Papaya' === 'papaya'); // false.
 console.log(undefined == null); // true.
 console.log(undefined === null); // false.
 // ```
+
+console.log('-----');
 
 // ## Example 8 - Логічні оператори
 
@@ -203,6 +205,8 @@ console.log(null || (2 && 3) || 4); // 3
  */
 
 // ```
+
+console.log('-----');
 
 // ## Example 9 - Значення за замовчуванням та оператор нульового злиття
 
@@ -268,3 +272,19 @@ console.log(string.padStart(4, '5'));
 //   console.log(clientCounter);
 //   clientCounter += 1;
 // } while(clientCounter < maxClients)
+
+// let password = '';
+
+// do {
+//   password = prompt('Введіть пароль довший 4-х символів', '');
+// } while (password.length < 5);
+
+// console.log('Ввели пароль: ', password);
+
+// let clientCounter = 18;
+// const maxClients = 25;
+
+// while (clientCounter < maxClients) {
+//   console.log(clientCounter);
+//   clientCounter += 1;
+// }
