@@ -234,13 +234,21 @@ console.log(value1);
 // - 1441 покаже 24:01
 
 // ```js
-const totalMinutes = 450;
+const totalMinutes = 1441;
 
 const hours = Math.floor(totalMinutes / 60);
 const minutes = totalMinutes % 60;
 
 const formatedTime = `${String(hours).padStart(2, '0')}:${minutes}`;
 console.log(formatedTime);
+
+// const hoursString = hours + '';
+// const formatedTime = `${hoursString.padStart(2, '0')}:${minutes}`;
+// console.log(formatedTime);
+
+// const hoursString = String(hours).padStart(2, '0');
+// const formatedTime = `${hoursString}:${minutes}`;
+// console.log(formatedTime);
 
 const string = 'abc';
 console.log(string.padStart(4, '5'));
