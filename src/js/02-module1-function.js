@@ -8,13 +8,15 @@ console.log('Lesson 2');
 // `ECMAScript`, то показуй alert з рядком `"Правильно!"`, в іншому випадку -
 // `"Не знаєте? ECMAScript!"`
 
-const answer = prompt('Яка офіційна назва JavaScript?');
+// const answer = prompt('Яка офіційна назва JavaScript?');
 
-if (answer === 'ECMAScript') {
-  alert('Правильно');
-} else {
-  alert('Не знаєте? ECMAScript!');
-}
+// if (answer === 'ECMAScript') {
+//   alert('Правильно');
+// } else {
+//   alert('Не знаєте? ECMAScript!');
+// }
+
+console.log('-----');
 
 // ## Example 2 - Відображення часу (if...else)
 
@@ -23,15 +25,15 @@ if (answer === 'ECMAScript') {
 // виводь рядок `"14 г."`, без хвилин.
 
 // ```js
-// const hours = 14;
-// const minutes = 0;
+const hours = 14;
+const minutes = 0;
 
-//1
-// let result = `${hours} г.`;
+1;
+let result = `${hours} г.`;
 
-// if (minutes !== 0) {
-//   result += ` ${minutes} хв.`
-// }
+if (minutes !== 0) {
+  result += ` ${minutes} хв.`;
+}
 
 //2
 // let result;
@@ -42,8 +44,10 @@ if (answer === 'ECMAScript') {
 //   result = `${hours} г. ${minutes} хв.`
 // }
 
-// console.log(result)
+console.log(result);
 // ```
+
+console.log('-----');
 
 // ## Example 3 - Розгалуження
 
@@ -56,16 +60,18 @@ if (answer === 'ECMAScript') {
 // const userInput = Number(prompt('Введіть число'));
 
 // if (userInput === 0) {
-//   alert("Це нуль")
+//   alert('Це нуль');
 // } else if (userInput > 0) {
-//   alert("Це позитивне число")
+//   alert('Це позитивне число');
 // } else if (userInput < 0) {
-//   alert("Це негативне число")
+//   alert('Це негативне число');
 // } else {
-//   alert("ви щось не те ввели")
+//   alert('ви щось не те ввели');
 // }
 
 // ```
+
+console.log('-----');
 
 // ## Example 4 - Вкладені розгалуження
 
@@ -74,20 +80,22 @@ if (answer === 'ECMAScript') {
 // випадку у консолі повинна бути сума значення `b` та числа 512.
 
 // ```js
-// const a = 120;
-// const b = 10;
+const a = 120;
+const b = 10;
 
-// if(a > 100 && b > 100) {
-//   if (a >= b) {
-//     console.log(a)
-//   } else {
-//     console.log(b)
-//   }
-// } else {
-//   console.log(b+512)
-// }
+if (a > 100 && b > 100) {
+  if (a >= b) {
+    console.log(a);
+  } else {
+    console.log(b);
+  }
+} else {
+  console.log(b + 512);
+}
 
 // ```
+
+console.log('-----');
 
 // ## Example 5 - Форматування посилання (endsWith)
 
@@ -96,14 +104,23 @@ if (answer === 'ECMAScript') {
 // конструкцію `if...else`.
 
 // ```js
-// let link = 'https://my-site.com/about';
+let link = 'https://my-site.com/about';
 
-// if (!link.endsWith('/')) {
+if (!link.endsWith('/')) {
+  link += '/';
+}
+console.log(link);
+
+// if (link.endsWith('/')) {
+//   console.log(link);
+// } else {
 //   link += '/';
+//   console.log(link);
 // }
-// console.log(link);
 
 // ```
+
+console.log('-----');
 
 // ## Example 6 - Форматування посилання (includes та логічне «І»)
 
@@ -113,13 +130,14 @@ if (answer === 'ECMAScript') {
 // `if...else`.
 
 // ```js
-// let link = 'https://my-site.com/about/';
+let linkAnother = 'https://my-site.com/about';
 
-// if (!link.endsWith('/') && link.includes('my-site')) {
-//   link += '/';
-// }
+if (!linkAnother.endsWith('/') && linkAnother.includes('my-site')) {
+  linkAnother += '/';
+}
 
-// console.log(link);
+console.log(linkAnother);
+
 // ```
 
 // ## Example 7 - Форматування посилання (тернарний оператор)
@@ -127,9 +145,11 @@ if (answer === 'ECMAScript') {
 // Виконай рефакторинг коду задачі номер 4, використовуючи тернарний оператор.
 
 // ```js
-// let link = 'https://mys-site.com/about';
-// link.includes('my-site') && !link.endsWith('/') ? link += '/' : link += '?';
-// console.log(link);
+let linkNext = 'https://mys-site.com/about';
+linkNext.includes('my-site') && !linkNext.endsWith('/')
+  ? (linkNext += '/')
+  : (linkNext += '?');
+console.log(linkNext);
 // ```
 
 // ## Example 8 - if...else та логічні оператори
