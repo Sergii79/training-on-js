@@ -1,0 +1,2 @@
+!function(){console.log("Lesson 2"),console.log("-----");var o="".concat(14," г.");console.log(o),console.log("-----"),console.log("-----");console.log(522),console.log("-----");var s="https://my-site.com/about";s.endsWith("/")||(s+="/"),console.log(s),console.log("-----");var l="https://my-site.com/about";!l.endsWith("/")&&l.includes("my-site")&&(l+="/"),console.log(l);var e="https://mys-site.com/about";e.includes("my-site")&&!e.endsWith("/")?e+="/":e+="?",console.log(e)}();
+//# sourceMappingURL=02-module_1-function.fb60b4cc.js.map
