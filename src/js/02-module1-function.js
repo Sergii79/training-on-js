@@ -140,6 +140,8 @@ console.log(linkAnother);
 
 // ```
 
+console.log('-----');
+
 // ## Example 7 - Форматування посилання (тернарний оператор)
 
 // Виконай рефакторинг коду задачі номер 4, використовуючи тернарний оператор.
@@ -151,6 +153,8 @@ linkNext.includes('my-site') && !linkNext.endsWith('/')
   : (linkNext += '?');
 console.log(linkNext);
 // ```
+
+console.log('-----');
 
 // ## Example 8 - if...else та логічні оператори
 
@@ -164,16 +168,18 @@ console.log(linkNext);
 // - більше `24` , виводь рядок `"Overdue"`
 
 // ```js
-// const totalHours = 25;
+const totalHours = 25;
 
-// if (totalHours < 17) {
-//   console.log("Pending")
-// } else if (totalHours >= 17 && totalHours <= 24) {
-//   console.log("Expires")
-// } else {
-//   console.log("Overdue")
-// }
+if (totalHours < 17) {
+  console.log('Pending');
+} else if (totalHours >= 17 && totalHours <= 24) {
+  console.log('Expires');
+} else {
+  console.log('Overdue');
+}
 // ```
+
+console.log('-----');
 
 // ## Example 9 - Дедлайн здачі проекту (if...else)
 
@@ -186,36 +192,48 @@ console.log(linkNext);
 // - Якщо до дедлайну 3+ днів - виведи рядок `"Дата у майбутньому"`
 
 // ```js
-// const daysUntilDeadline = 5;
+const daysUntilDeadlineAnother = 10;
 
+if (daysUntilDeadlineAnother === 0) {
+  console.log('Сьогодні');
+} else if (daysUntilDeadlineAnother === 1) {
+  console.log('Завтра');
+} else if (daysUntilDeadlineAnother === 2) {
+  console.log('Післязавтра');
+} else {
+  console.log('Дата у майбутньому');
+}
 // ```
+
+console.log('-----');
 
 // ## Example 10 - Дедлайн здачі проекту (switch)
 
 // Виконай рефакторинг коду задачі номер 5 використовуючи `switch`.
 
 // ```js
-// const daysUntilDeadline = -1;
+const daysUntilDeadline = 1;
 
-// switch (daysUntilDeadline) {
-//   case 0: {
-//     console.log('Сьогодні');
-//     break;
-//   }
+switch (daysUntilDeadline) {
+  case 0: {
+    console.log('Сьогодні');
+    break;
+  }
 
-//   case 1: {
-//     console.log('Завтра');
-//     break;
-//   }
-//   case 2: {
-//     console.log('Післязавтра');
-//     break;
-//   }
+  case 1: {
+    console.log('Завтра');
+    break;
+  }
 
-//   default: {
-//     console.log('Дата у майбутньому');
-//   }
-// }
+  case 2: {
+    console.log('Післязавтра');
+    break;
+  }
+
+  default: {
+    console.log('Дата у майбутньому');
+  }
+}
 
 // if (daysUntilDeadline === 0) {
 //   console.log('Сьогодні');
@@ -228,20 +246,28 @@ console.log(linkNext);
 // }
 // ```
 
+console.log('-----');
+
 // ## Example 11 - Цикл for
 
 // Напиши цикл for, який виводить у консоль браузера числа за зростанням від `min`
 // до `max`, але тільки якщо число кратне `5`.
 
 // ```js
-// const max = 89;
-// const min = 13;
+const max = 89;
+const min = 13;
 
-// for(let i = min; i <= max; i += 1) {
-//   if (i % 5 === 0) console.log(i)
+for (let i = min; i <= max; i += 1) {
+  if (i % 5 === 0) console.log(i);
+}
+
+// for (let i = min; i <= max; i += 1) {
+//   !(i % 5) ? console.log(i) : null;
 // }
 
 // ```
+
+console.log('-----');
 
 // ## Example 12 - Введення користувача та розгалуження
 
@@ -256,6 +282,22 @@ console.log(linkNext);
 
 // - Якщо введено пароль `"Я адмін"`, то вивести рядок `"Здрастуйте!"`
 // - Інакше виводити рядок `"Невірний пароль"`
+
+// const loginName = prompt('Введіть логін');
+// console.log(loginName, typeof loginName);
+
+// if (loginName === 'Адмін') {
+//   const password = prompt('Введіть пароль');
+//   if (password === 'qwerty') {
+//     alert('Вітаю Адмін!');
+//   } else {
+//     alert('Невірний пароль');
+//   }
+// } else if (!loginName) {
+//   alert('Скасовано');
+// } else {
+//   alert('Я вас не знаю');
+// }
 
 // const loginName = prompt('ваш логін');
 
