@@ -1,2 +1,0 @@
-console.log("Lesson 2"),console.log("-----");let o="14 г.";console.log(o),console.log("-----"),console.log("-----");console.log(522),console.log("-----");let l="https://my-site.com/about";l.endsWith("/")||(l+="/"),console.log(l),console.log("-----");let s="https://my-site.com/about";!s.endsWith("/")&&s.includes("my-site")&&(s+="/"),console.log(s);let e="https://mys-site.com/about";e.includes("my-site")&&!e.endsWith("/")?e+="/":e+="?",console.log(e);
-//# sourceMappingURL=02-module_1-function.207f1995.js.map
