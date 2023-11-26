@@ -344,3 +344,46 @@ console.log('-----');
 // }
 
 // console.log(total); // 20
+
+const temps = [14, -4, 25, 8, 11];
+
+// В консолі буде масив
+console.log(temps);
+// ❌ Так не спрацює, тому що передаємо цілий масив
+console.log(Math.max(temps)); // NaN
+
+// В консолі буде набір окремих чисел
+console.log(...temps);
+// ✅ Розподілимо колекцію елементів у якості окремих аргументів
+console.log(Math.max(...temps)); // 25
+
+console.log('-----');
+// Як оголосити параметри функції таким чином,
+// щоб можна було передати будь-яку кількість аргументів?
+// function multiply() {
+//   // ...
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+
+console.log('-----');
+function multiplyFirst(...args) {
+  console.log(args); // масив усіх аргументів
+}
+
+multiplyFirst(1, 2);
+multiplyFirst(1, 2, 3);
+multiplyFirst(1, 2, 3, 4);
+
+console.log('-----');
+function multiplySecond(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значення першого аргументу
+  console.log(secondNumber); // Значення другого аргументу
+  console.log(otherArgs); // Масив інших аргументів
+}
+
+multiplySecond(1, 2);
+multiplySecond(1, 2, 3);
+multiplySecond(1, 2, 3, 4);
