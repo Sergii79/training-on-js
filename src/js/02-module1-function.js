@@ -387,3 +387,19 @@ function multiplySecond(firstNumber, secondNumber, ...otherArgs) {
 multiplySecond(1, 2);
 multiplySecond(1, 2, 3);
 multiplySecond(1, 2, 3, 4);
+
+// function checkForSpam(message) {
+//   let result;
+//   message = message.toLowerCase();
+//   result = message.includes('spam') || message.includes('sale') ? true : false;
+//   // if(message = "spam" || message = "sale") {
+//   //   result = message.includes();
+//   // }
+//   // else {
+//   //   result = message;
+//   // }
+//   // Change code below this line
+
+//   // Change code above this line
+//   return result;
+// }
