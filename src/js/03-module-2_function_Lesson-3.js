@@ -13,11 +13,13 @@ console.log('Lesson 3');
 //   console.log(user);
 // }
 
-// const string = "javascript";
+// const stringe = 'javascript';
 
-// for (const character of string) {
+// for (const character of stringe) {
 //   console.log(character);
 // }
+
+console.log('-----');
 
 // ТАК РОБИТИ НЕ ТРЕБА!
 const a = ['Mango', 'Ajax'];
@@ -29,10 +31,10 @@ const c = a + b;
 // v.push('hello');
 // b.push('I am b');
 
-// console.log(a)
-// console.log(b)
-// console.log(c)
-// console.log(v)
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(v);
 
 // Includes приймає тільки один аргумент
 a.includes('Mango'); // will work
@@ -51,6 +53,8 @@ const characters = message.split('').join(' ').split(' ');
 // console.log(words)
 
 // # Модуль 2. Заняття 3. Масиви
+
+console.log('-----');
 
 // ## Example 1 - Базові операції з масивом
 
@@ -78,6 +82,8 @@ genres.unshift('Country', 'Reggae');
 console.log(genres);
 // ```
 
+console.log('-----');
+
 // ## Example 2 - Масиви та рядки
 
 // Напиши скрипт для обчислення площі прямокутника зі сторонами, значення
@@ -98,6 +104,8 @@ const square = sizesArray[0] * sizesArray[1];
 console.log(square);
 // ```
 
+console.log('-----');
+
 // ## Example 3 - Перебір масиву
 
 // Напиши скрипт для перебору масиву `fruits` циклом `for`. Для кожного елемента
@@ -108,16 +116,18 @@ console.log(square);
 const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
 // номер_елемента: значення_елемента = 1: '🍎'
 
-// for (let item of fruits) {
-//   const index = fruits.indexOf(item) + 1;
-//   console.log(`${index}: ${item}`)
-// }
+for (let item of fruits) {
+  const index = fruits.indexOf(item) + 1;
+  console.log(`${index}: ${item}`);
+}
 
-// for (let i = 0; i < fruits.length; i += 1) {
-//   console.log(`${i+1}: ${fruits[i]}`)
-// }
+for (let i = 0; i < fruits.length; i += 1) {
+  console.log(`${i + 1}: ${fruits[i]}`);
+}
 
 // ```
+
+console.log('-----');
 
 // ## Example 4 - Масиви та цикли
 
@@ -142,6 +152,8 @@ for (let i = 0; i < namesArray.length; i += 1) {
   console.log(`${namesArray[i]}: ${phonesArray[i]}`);
 }
 // ```
+
+console.log('-----');
 
 // ## Example 5 - Масиви та рядки
 
