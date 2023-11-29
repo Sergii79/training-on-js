@@ -26,7 +26,7 @@ const calcBMI = function (w, h) {
 
   const heightPow = Math.pow(height, 2);
 
-  return weight / heightPow;
+  return (weight / heightPow).toFixed(1);
 };
 
 // const weight = prompt('введіть свою вагу в кілграмах');
@@ -36,6 +36,8 @@ const calcBMI = function (w, h) {
 // console.log(bmi); // 28.8
 // ```
 
+console.log('-----');
+
 // ## Example 2 - Найменше з чисел
 
 // Напиши функцію `min(a,b)`, яка повертає найменше з чисел `a` та `b`.
@@ -43,7 +45,14 @@ const calcBMI = function (w, h) {
 // ```js
 
 const min = function (a, b) {
+  //1
   return a > b ? b : a;
+
+  //2
+  if (a > b) {
+    return b;
+  }
+  return a;
 };
 
 console.log(min(2, 5)); // 2
@@ -52,6 +61,8 @@ console.log(min(1, 1)); // 1
 console.log(min(4, 4)); // 1
 // ```
 
+console.log('-----');
+
 // ## Example 3 - Площа прямокутника
 
 // Напиши функцію `getRectArea(dimensions)` для обчислення площі прямокутника
@@ -59,7 +70,7 @@ console.log(min(4, 4)); // 1
 // рядка. Значення гарантовано розділені пробілом.
 
 // ```js
-// console.log("square = ", getRectArea('8 11'));
+console.log('square = ', getRectArea('8 11'));
 
 function getRectArea(dimensions) {
   const sizesArr = dimensions.split(' ');
@@ -68,6 +79,8 @@ function getRectArea(dimensions) {
 }
 
 // ```
+
+console.log('-----');
 
 // ## Example 4 - Логування елементів
 
@@ -96,6 +109,8 @@ function logItems(items) {
 // logItems(['Mango', 'Poly', 'Ajax']);
 // logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
 // ```
+
+console.log('-----');
 
 // ## Example 5 - Логування контактів
 
@@ -138,6 +153,8 @@ function printContactsInfo(names, phones) {
 // console.log(array.join(' || '))
 // ```
 
+console.log('-----');
+
 // ## Example 6 - Пошук найбільшого елемента
 
 // Напиши функцію `findLargestNumber(numbers)`яка шукає найбільше число в
@@ -163,6 +180,8 @@ console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
 console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83
 // ```
 
+console.log('-----');
+
 // ## Example 7 - Середнє значення
 
 // Напишіть функцію `calAverage()` яка приймає довільну кількість аргументів
@@ -170,16 +189,16 @@ console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83
 
 // ```js
 function calcAverage(...numbers) {
-  // console.log(numbers)
+  console.log(numbers);
 
-  // console.log("Total arguments = ", arguments.length);
+  console.log('Total arguments = ', arguments.length);
 
   let sum = 0;
   for (let arg of numbers) {
     sum += arg;
   }
 
-  // return sum / arguments.length
+  return sum / arguments.length;
 }
 
 // console.log(calcAverage(1, 2, 3, 4, 45, 12, 67)); // 2.5
