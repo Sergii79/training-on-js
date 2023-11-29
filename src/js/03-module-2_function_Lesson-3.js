@@ -172,6 +172,8 @@ const result = stringArray.join(' ');
 console.log(result);
 // ```
 
+console.log('-----');
+
 // ## Example 6 - Масиви та рядки
 
 // Напиши скрипт, який «розгортає» рядок (зворотний порядок букв) і виводить
@@ -193,6 +195,8 @@ const string1 = 'Welcome to the future';
 
 // ```
 
+console.log('-----');
+
 // ## Example 7 - Сортування масиву із циклом
 
 // Напиши скрипт сортування масиву рядків в алфавітному порядку за першою літерою
@@ -203,6 +207,8 @@ const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
 langs.sort();
 console.log(langs);
 // ```
+
+console.log('-----');
 
 // ## Example 8 - Пошук елемента
 
