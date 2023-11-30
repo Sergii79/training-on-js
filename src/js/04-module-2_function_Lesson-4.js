@@ -206,6 +206,8 @@ function calcAverage(...numbers) {
 // console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
 // ```
 
+console.log('-----');
+
 // ## Example 8 - Форматування часу
 
 // Напиши функцію `formatTime(minutes)` яка переведе значення `minutes`
@@ -237,6 +239,8 @@ console.log(a); // "01:10"
 // console.log(formatTime(1441)); // "24:01"
 // ```
 
+console.log('-----');
+
 // ## Example 9 - Колекція курсів (includes, indexOf, push і т. д.)
 
 // Напишіть функції для роботи з колекцією навчальних курсів `courses`:
@@ -250,12 +254,8 @@ const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 
 const lastCourseIndex = courses.length - 1;
 const lastCourse = courses[lastCourseIndex];
-
-function A(array) {
-  console.log(array);
-}
-
-A([1, 2, 3, 4]);
+console.log(lastCourseIndex);
+console.log(lastCourse);
 
 function addCourse(name) {
   // if (courses.includes(name)) {
@@ -298,9 +298,6 @@ function updateCourse(oldName, newName) {
 
   return result;
 }
-const arr = [8, 9, 10];
-arr.sort();
-console.log();
 
 let res = addCourse('Express');
 console.log(courses, res); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
@@ -316,3 +313,15 @@ console.log(courses, res); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Expre
 res = updateCourse('Expressss', 'NestJS');
 console.log(courses, res); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
 // ```
+
+console.log('-----');
+
+function splitMessage(message, delimiter) {
+  // let words = (message.split(""), message.split(" "), message.split("_"));
+  let words;
+  words = message.split(delimiter);
+  // Change code below this line
+
+  // Change code above this line
+  return words;
+}
