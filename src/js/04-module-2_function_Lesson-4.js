@@ -316,12 +316,20 @@ console.log(courses, res); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJ
 
 console.log('-----');
 
-function splitMessage(message, delimiter) {
-  // let words = (message.split(""), message.split(" "), message.split("_"));
-  let words;
-  words = message.split(delimiter);
+function calculateEngravingPrice(message, pricePerWord) {
   // Change code below this line
+  let sumPrice;
+  let wordArray = message.split(' ');
+  console.log(wordArray);
 
+  sumPrice = wordArray.length * pricePerWord;
+
+  return sumPrice;
   // Change code above this line
-  return words;
 }
+
+message = 'JavaScript is in my blood';
+pricePerWord = 2;
+
+const totalPrice = calculateEngravingPrice(message, pricePerWord);
+console.log(`Total price: ${totalPrice}`);
