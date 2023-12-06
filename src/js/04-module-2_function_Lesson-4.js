@@ -94,9 +94,9 @@ console.log('-----');
 
 // ```js
 function logItems(items) {
-  // for (let i = 0; i < items.length; i += 1) {
-  //   console.log(`${i + 1} - ${items[i]}`)
-  // }
+  for (let i = 0; i < items.length; i += 1) {
+    console.log(`${i + 1} - ${items[i]}`);
+  }
 
   for (let item of items) {
     const i = items.indexOf(item);
@@ -107,7 +107,7 @@ function logItems(items) {
 // logItems(['Mango', 'Poly', 'Ajax']);
 // logItems(['asdas', 'asdasd', 'dkjghk']);
 // logItems(['Mango', 'Poly', 'Ajax']);
-// logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
+logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
 // ```
 
 console.log('-----');
@@ -239,7 +239,7 @@ console.log(a); // "01:10"
 // console.log(formatTime(1441)); // "24:01"
 // ```
 
-console.log('-----');
+console.log('--Example 9--');
 
 // ## Example 9 - Колекція курсів (includes, indexOf, push і т. д.)
 
@@ -310,7 +310,7 @@ res = deleteCourse();
 console.log(courses, res); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
 // removeCourse('Vue'); // 'Курс із таким ім'ям не знайдено'
 
-res = updateCourse('Expressss', 'NestJS');
+res = updateCourse('Express', 'NestJS');
 console.log(courses, res); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
 // ```
 
