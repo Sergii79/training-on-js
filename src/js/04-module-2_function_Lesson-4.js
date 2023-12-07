@@ -334,12 +334,69 @@ pricePerWord = 2;
 const totalPrice = calculateEngravingPrice(message, pricePerWord);
 console.log(`Total price: ${totalPrice}`);
 
-function calculateTotalPrice(order) {
-  let total = 0;
-  // Change code below this line
-  for (let i = 0; i < order.length; i++) {
-    total += order[i];
+// function findLongestWord(string) {
+//   // Change code below this line
+
+//   let array = string.split(' ');
+//   let LongestWord;
+//   let length = 0;
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i].length > length) {
+//       length = array[i].length;
+//       LongestWord = array[i];
+//     }
+//   }
+//   console.log(LongestWord);
+//   return LongestWord;
+
+//   // Change code above this line
+// }
+
+console.log('-----');
+
+// function findLongestWord(stringArray) {
+//   let longestPhrase = '';
+
+//   for (let i = 0; i < stringArray.length; i++) {
+//     const currentPhrase = stringArray[i];
+//     console.log(currentPhrase);
+
+//     if (currentPhrase.length > longestPhrase.length) {
+//       longestPhrase = currentPhrase;
+//     }
+//   }
+
+//   console.log(longestPhrase);
+//   return longestPhrase;
+// }
+
+// const string = ['sfs dfsg', 'dg dfbdf dfd dfbfdb dd', 'dbdbdb fbfsbs svsbsd'];
+// console.log(string);
+
+// findLongestWord(string);
+
+function findString(array) {
+  let longestString = '';
+
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    console.log(element);
+
+    if (element.length > longestString.length) {
+      longestString = element;
+    }
   }
-  // Change code above this line
-  return total;
+  console.log(longestString);
+  return longestString;
 }
+
+const wordArray = [
+  'sdsdf dsvs sdf',
+  'sdf sdsdf',
+  'sdgs s sf sfsdggs sssf',
+  'dsv xs f',
+];
+console.log(wordArray);
+
+findString(wordArray);
