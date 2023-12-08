@@ -391,6 +391,40 @@ function findString(array) {
   return longestString;
 }
 
+const wordsArray = [
+  'sdsdf dsvs sdf',
+  'sdf sdsdf',
+  'sdgs s sf sfsdggs sssf',
+  'dsv xs f',
+];
+console.log(wordsArray);
+
+findString(wordsArray);
+
+console.log('-----');
+
+function findLongerWord(array) {
+  let longestWord = '';
+
+  for (let index = 0; index < array.length; index++) {
+    const wordsArray = array[index].split(' ');
+    console.log(wordsArray);
+    // if (element.length > longestString.length) {
+    //   longestString = element;
+    // }
+    for (let index = 0; index < wordsArray.length; index++) {
+      const word = wordsArray[index];
+      console.log(word);
+      if (word.length > longestWord.length) {
+        longestWord = word;
+      }
+    }
+  }
+
+  console.log(longestWord);
+  return longestWord;
+}
+
 const wordArray = [
   'sdsdf dsvs sdf',
   'sdf sdsdf',
@@ -399,4 +433,4 @@ const wordArray = [
 ];
 console.log(wordArray);
 
-findString(wordArray);
+findLongerWord(wordArray);
