@@ -452,3 +452,45 @@ function filterNumberArray(numbers, value) {
 }
 
 filterNumberArray(numberArray, valueNumber);
+
+console.log('-----');
+
+// function checkFruit(fruit) {
+//   const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+//   return fruits.includes(fruit); // Change this line
+// }
+
+const newFruit = 'apple';
+
+function checkFruit(fruit) {
+  const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+  if (fruits.includes(fruit)) {
+    console.log(`${fruit} is in the array.`);
+    return true;
+  } else {
+    console.log(`${fruit} is not in the array.`);
+    return false;
+  }
+  // Change this line
+}
+
+checkFruit(newFruit);
+
+console.log('-----');
+
+function getCommonElements(array1, array2) {
+  // Change code below this line
+  let newArray = [];
+
+  for (let index = 0; index <= array1.length - 1; index++) {
+    let hasIsTrue = array2.includes(array1[index]);
+    if (hasIsTrue) {
+      newArray.push(array1[index]);
+    }
+  }
+
+  return newArray;
+  // Change code above this line
+}
