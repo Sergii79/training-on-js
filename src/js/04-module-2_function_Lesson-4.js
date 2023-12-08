@@ -482,15 +482,56 @@ console.log('-----');
 
 function getCommonElements(array1, array2) {
   // Change code below this line
-  let newArray = [];
+  let checkArrey = [];
 
-  for (let index = 0; index <= array1.length - 1; index++) {
-    let hasIsTrue = array2.includes(array1[index]);
-    if (hasIsTrue) {
-      newArray.push(array1[index]);
+  for (let index = 0; index < array1.length; index++) {
+    if (array2.includes(array1[index])) {
+      checkArrey.push(array1[index]);
+    }
+  }
+  console.log(checkArrey);
+  return checkArrey;
+  // Change code above this line
+}
+
+const numberArray1 = [1, 3, 5];
+const numberArray2 = [0, 8, 5, 3];
+
+getCommonElements(numberArray1, numberArray2);
+
+console.log('-----');
+
+// function getEvenNumbers(start, end) {
+//   // Change code below this line
+//   let evenNumbers = [];
+
+//   for (let index = start; index <= end; index++) {
+//     if (index % 2 === 0) {
+//       evenNumbers.push(index);
+//     }
+//   }
+
+//   return evenNumbers;
+//   // Change code above this line
+// }
+
+function getEvenNumbers(start, end) {
+  // Change code below this line
+  let array = [];
+
+  for (let index = start; index <= end; index++) {
+    console.log(index);
+    if (index % 2 === 0) {
+      array.push(index);
     }
   }
 
-  return newArray;
+  console.log(array);
+  return array;
   // Change code above this line
 }
+
+const numberStart = 1;
+const numberEnd = 10;
+
+getEvenNumbers(numberStart, numberEnd);
