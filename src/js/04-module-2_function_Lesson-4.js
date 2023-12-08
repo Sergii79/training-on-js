@@ -355,27 +355,6 @@ console.log(`Total price: ${totalPrice}`);
 
 console.log('-----');
 
-// function findLongestWord(stringArray) {
-//   let longestPhrase = '';
-
-//   for (let i = 0; i < stringArray.length; i++) {
-//     const currentPhrase = stringArray[i];
-//     console.log(currentPhrase);
-
-//     if (currentPhrase.length > longestPhrase.length) {
-//       longestPhrase = currentPhrase;
-//     }
-//   }
-
-//   console.log(longestPhrase);
-//   return longestPhrase;
-// }
-
-// const string = ['sfs dfsg', 'dg dfbdf dfd dfbfdb dd', 'dbdbdb fbfsbs svsbsd'];
-// console.log(string);
-
-// findLongestWord(string);
-
 function findString(array) {
   let longestString = '';
 
@@ -434,3 +413,42 @@ const wordArray = [
 console.log(wordArray);
 
 findLongerWord(wordArray);
+
+console.log('-----');
+
+const minNumber = 1;
+const maxNumber = 16;
+
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Change code below this line
+  for (let index = min; index <= max; index += 2) {
+    numbers.push(index);
+  }
+  // Change code above this line
+  console.log(numbers);
+  return numbers;
+}
+
+createArrayOfNumbers(minNumber, maxNumber);
+
+console.log('-----');
+
+const numberArray = [1, 2, 3, 4, 5, 6];
+const valueNumber = 3;
+
+function filterNumberArray(numbers, value) {
+  // Change code below this line
+  let newArrey = [];
+
+  for (let index = 0; index <= numbers.length; index++) {
+    if (numbers[index] > value) {
+      newArrey.push(numbers[index]);
+    }
+  }
+  console.log(newArrey);
+  return newArrey;
+  // Change code above this line
+}
+
+filterNumberArray(numberArray, valueNumber);
