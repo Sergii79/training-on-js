@@ -501,20 +501,6 @@ getCommonElements(numberArray1, numberArray2);
 
 console.log('-----');
 
-// function getEvenNumbers(start, end) {
-//   // Change code below this line
-//   let evenNumbers = [];
-
-//   for (let index = start; index <= end; index++) {
-//     if (index % 2 === 0) {
-//       evenNumbers.push(index);
-//     }
-//   }
-
-//   return evenNumbers;
-//   // Change code above this line
-// }
-
 function getEvenNumbers(start, end) {
   // Change code below this line
   let array = [];
@@ -535,3 +521,42 @@ const numberStart = 1;
 const numberEnd = 10;
 
 getEvenNumbers(numberStart, numberEnd);
+
+console.log('-----');
+
+// function includes(array, value) {
+//   // Change code below this line
+//   for (let index = 0; index < array.length; index++) {
+//     if (array[index] === value) {
+//       console.log(array[index]);
+//       // return index;
+//       console.log('true');
+//       return true;
+//     }
+//   }
+//   console.log('false');
+//   return false;
+//   // Change code above this line
+// }
+
+// const allArray = [1, 2, 3, 4, 5];
+// const findValue = 2;
+
+// includes(allArray, findValue);
+
+function includes(array, value) {
+  // Change code below this line
+  for (let number of array) {
+    if (number === value) {
+      console.log('true');
+      return true;
+    }
+  }
+  console.log('false');
+  return false;
+}
+
+const allArray = [1, 2, 3, 4, 5];
+const findValue = 5;
+
+includes(allArray, findValue);
