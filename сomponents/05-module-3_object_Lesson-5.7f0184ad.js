@@ -1,0 +1,2 @@
+!function(){console.log("Hello");var o={title:"The Last Kingdom",author:"Bernard Cornwell",genres:["historical prose","adventure"],rating:8.38},r=Object.keys(o);console.log(r);var e=!0,l=!1,n=void 0;try{for(var t,a=r[Symbol.iterator]();!(e=(t=a.next()).done);e=!0){var i=t.value;console.log(i),console.log("This ".concat(o[i]))}}catch(o){l=!0,n=o}finally{try{e||null==a.return||a.return()}finally{if(l)throw n}}}();
+//# sourceMappingURL=05-module-3_object_Lesson-5.7f0184ad.js.map
