@@ -1,2 +1,0 @@
-console.log("Hello");const o={title:"The Last Kingdom",author:"Bernard Cornwell",genres:["historical prose","adventure"],rating:8.38},l=Object.keys(o);console.log(l);for(const e of l)console.log(e),console.log(`This ${o[e]}`);const e=[14,-4,25,8,11];function n(o,l,...e){console.log(o),console.log(l),console.log(e)}console.log(e),console.log(Math.max(e)),console.log(...e),console.log(Math.max(...e)),console.log("----"),console.log("----"),n(1,2),n(1,2,3),n(1,2,3,4);
-//# sourceMappingURL=05-module-3_object_Lesson-5.b78505bc.js.map
