@@ -15,6 +15,8 @@ console.log('Модуль 3 Заняття 6. Деструктуризація �
 // foo()
 /** ---------------- */
 
+console.log('---Example 1---');
+
 // ## Example 1 - Деструктуризація
 
 // Перепиши функцію так, щоб вона приймала один об'єкт параметрів замість набору
@@ -27,10 +29,28 @@ function calcBMI({ weight, height }) {
   return Number((numericWeight / numericHeight ** 2).toFixed(1));
 }
 
-const user = {
-  weight: '88,3',
-  height: '1.75',
-};
+console.log(
+  calcBMI({
+    weight: '88,3',
+    height: '1.75',
+  })
+);
+console.log(
+  calcBMI({
+    weight: '68,3',
+    height: '1.65',
+  })
+);
+console.log(
+  calcBMI({
+    weight: '118,3',
+    height: '1.95',
+  })
+);
+// const user = {
+//   weight: '88,3',
+//   height: '1.75',
+// };
 
 // // Було
 // console.log(calcBMI('88,3', '1.75'));
@@ -38,25 +58,9 @@ const user = {
 // // console.log(calcBMI('118,3', '1.95'));
 
 // // Очікується
-// console.log(
-//   calcBMI({
-//     weight: '88,3',
-//     height: '1.75',
-//   }),
-// );
-// console.log(
-//   calcBMI({
-//     weight: '68,3',
-//     height: '1.65',
-//   }),
-// );
-// console.log(
-//   calcBMI({
-//     weight: '118,3',
-//     height: '1.95',
-//   }),
-// );
 // ```
+
+console.log('---Example 2---');
 
 // ## Example 2 - Деструктуризація
 
@@ -65,40 +69,46 @@ const user = {
 
 // ```js
 
-// const userA = {
-//   name: 'John',
-//   surname: 'Smith',
-//   age: 24
-// }
+const userA = {
+  name: 'John',
+  surname: 'Smith',
+  age: 24,
+};
 
-// function printUser({name, surname, age = 'unknow'} = {}) {
-//   console.log(`User is ${name} ${surname}, his age is ${age}`)
-// }
+function printUser({ name, surname, age = 'unknow' } = {}) {
+  console.log(`User is ${name} ${surname}, his age is ${age}`);
+}
 
-// function hello(hey = 'No argument') {
-//   console.log(hey)
-// }
+function hello(hey = 'No argument') {
+  console.log(hey);
+}
 
-// printUser(userA)
-// printUser()
+printUser(userA);
+printUser();
 
-// hello('asdsadsad')
-// hello()
+hello('asdsadsad');
+hello();
 
-// function hello() {
-//   console.log('hello')
-// }
-// hello(1,2,34,55)
+function hello() {
+  console.log('hello');
+}
+hello(1, 2, 34, 55);
 
-// function printContactsInfo({names = '', phones = ''} = {}) {
-//   console.log(names, phones)
-//   const nameList = names.split(',');
-//   const phoneList = phones.split(',');
+function printContactsInfo({ names = '', phones = '' } = {}) {
+  console.log(names, phones);
+  const nameList = names.split(',');
+  const phoneList = phones.split(',');
 
-//   for (let i = 0; i < nameList.length; i += 1) {
-//     console.log(`${nameList[i]}: ${phoneList[i]}`);
-//   }
-// }
+  for (let i = 0; i < nameList.length; i += 1) {
+    console.log(`${nameList[i]}: ${phoneList[i]}`);
+  }
+}
+
+// // Очікується
+printContactsInfo({
+  names: 'Jacob,William,Solomon,Artemis',
+  phones: '89001234567,89001112233,890055566377,890055566300',
+});
 
 // // Було
 // // printContactsInfo(
@@ -108,12 +118,9 @@ const user = {
 
 // printContactsInfo()
 
-// // Очікується
-// printContactsInfo({
-//   // names: 'Jacob,William,Solomon,Artemis',
-//   phones: '89001234567,89001112233,890055566377,890055566300',
-// });
 // ```
+
+console.log('---Example 3---');
 
 // ## Example 3 - Глибока деструктуризація
 
@@ -146,6 +153,8 @@ const boatCompany = {
 // // Очікується
 // console.log(getBotReport(boatCompany)); // "Cyberdyne Systems has 200 bots in stock"
 // ```
+
+console.log('---Example 4---');
 
 // ## Example 4 - Деструктуризація
 
@@ -205,6 +214,8 @@ const company1 = {
 // ); // "Belacci has 35 item in stock"
 // ```
 
+console.log('---Example 5---');
+
 // ## Example 5 - Операція spread
 
 // Доповни функцію `createContact(partialContact)` так, щоб вона повертала новий
@@ -260,6 +271,8 @@ function generateId() {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
 // ```
+
+console.log('---Example 6---');
 
 // ## Example 6 - Операція rest
 
