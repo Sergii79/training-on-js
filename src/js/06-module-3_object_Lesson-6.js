@@ -89,10 +89,10 @@ printUser();
 hello('asdsadsad');
 hello();
 
-function hello() {
-  console.log('hello');
-}
-hello(1, 2, 34, 55);
+// function hello() {
+//   console.log('hello');
+// }
+// hello(1, 2, 34, 55);
 
 function printContactsInfo({ names = '', phones = '' } = {}) {
   console.log(names, phones);
@@ -151,7 +151,7 @@ const boatCompany = {
 // console.log(getBotReport('Cyberdyne Systems', 150, 50));
 
 // // Очікується
-// console.log(getBotReport(boatCompany)); // "Cyberdyne Systems has 200 bots in stock"
+console.log(getBotReport(boatCompany)); // "Cyberdyne Systems has 200 bots in stock"
 // ```
 
 console.log('---Example 4---');
