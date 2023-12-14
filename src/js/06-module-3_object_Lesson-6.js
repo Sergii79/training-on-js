@@ -189,8 +189,8 @@ const company1 = {
   },
 };
 
-// const report = getStockReport(company1);
-// console.log(report)
+const report = getStockReport(company1);
+console.log(report);
 
 // console.log(
 //   getStockReport({
@@ -244,14 +244,14 @@ function createContact(partialContact) {
   };
 }
 
-// const contact1 = {
-//   name: 'Mango',
-//   email: 'mango@mail.com',
-//   list: 'friends',
-// }
+const contact1 = {
+  name: 'Mango',
+  email: 'mango@mail.com',
+  list: 'friends',
+};
 
-// const newContact = createContact(contact1);
-// console.log(newContact)
+const newContact = createContact(contact1);
+console.log(newContact);
 
 // console.log(
 //   createContact({
@@ -260,12 +260,12 @@ function createContact(partialContact) {
 //     list: 'friends',
 //   }),
 // );
-// console.log(
-//   createContact({
-//     name: 'Poly',
-//     email: 'poly@hotmail.com',
-//   }),
-// );
+console.log(
+  createContact({
+    name: 'Poly',
+    email: 'poly@hotmail.com',
+  })
+);
 
 function generateId() {
   return '_' + Math.random().toString(36).substr(2, 9);
@@ -280,7 +280,7 @@ console.log('---Example 6---');
 // `fullName`, замість `firstName` та `lastName`.
 
 // ```js
-function transformUsername({ firstName, lastName, friends, ...props }) {
+function transformUsername({ firstName, lastName, ...props }) {
   return {
     ...props,
     fullName: `${firstName} ${lastName}`,
@@ -293,10 +293,6 @@ const user1 = {
   lastName: 'Mercer',
   email: 'j.mercer@mail.com',
   friendCount: 40,
-  friends: {
-    Anton: 'best',
-    Ivan: 'so so',
-  },
 };
 
 const newUser = transformUsername(user1);
