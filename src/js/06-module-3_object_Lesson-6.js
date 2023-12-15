@@ -367,18 +367,20 @@ function countProps(object) {
 
 console.log('------');
 
-const apartment = {
-  descr: 'Spacious apartment in the city center',
-  rating: 4,
-  price: 2153,
-};
-// Change code below this line
-const keys = Object.keys(apartment);
-const values = Object.values(apartment);
+const products = [
+  { name: 'Radar', price: 1300, quantity: 4 },
+  { name: 'Scanner', price: 2700, quantity: 3 },
+  { name: 'Droid', price: 400, quantity: 7 },
+  { name: 'Grip', price: 1200, quantity: 9 },
+];
 
-// for (const key of keys) {
-//   // keys.push(apartment)
-//   // values.push(apartment[key])
-// }
+function getProductPrice(productName) {
+  // Change code below this line
 
-// return keys;
+  for (let product of products) {
+    if (product.name === productName) {
+      return product.price;
+    }
+  }
+  return null;
+}
