@@ -338,20 +338,47 @@ console.log(newUser);
 
 console.log('------');
 
-const keys = [];
-const values = [];
-const advert = {
-  service: 'apt',
-};
-const apartment = Object.create(advert);
-apartment.descr = 'Spacious apartment in the city center';
-apartment.rating = 4;
-apartment.price = 2153;
-
-for (const key in apartment) {
+function countProps(object) {
   // Change code below this line
-  if (apartment.hasOwnProperty(key)) {
-    keys.push(key);
-    values.push(apartment[key]);
+  let propCount = 0;
+
+  const keys = Object.keys(object);
+  for (const key of keys) {
+    propCount += 1;
   }
+
+  return propCount;
+  // Change code above this line
 }
+
+// function countProps(object) {
+//   // Change code below this line
+//   let propCount = 0;
+
+//   for (const key in object) {
+//     if (object.hasOwnProperty(key)) {
+//       propCount += 1;
+//     }
+//   }
+
+//   return propCount;
+//   // Change code above this line
+// }
+
+console.log('------');
+
+const apartment = {
+  descr: 'Spacious apartment in the city center',
+  rating: 4,
+  price: 2153,
+};
+// Change code below this line
+const keys = Object.keys(apartment);
+const values = Object.values(apartment);
+
+// for (const key of keys) {
+//   // keys.push(apartment)
+//   // values.push(apartment[key])
+// }
+
+// return keys;
