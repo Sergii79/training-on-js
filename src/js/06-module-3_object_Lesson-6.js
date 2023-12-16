@@ -388,14 +388,17 @@ function getAllPropValues(propName) {
       totalArray.push(product[propName]);
     }
   }
+
   return totalArray;
 
   // Change code above this line
 }
 
+const resultName = getAllPropValues('name');
+console.log(resultName);
 console.log(getAllPropValues('name'));
-console.log(getAllPropValues('quantity'));
 console.log(getAllPropValues('price'));
+console.log(getAllPropValues('quantity'));
 console.log(getAllPropValues('category'));
 
 console.log('------');
