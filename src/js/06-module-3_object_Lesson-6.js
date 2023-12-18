@@ -403,11 +403,21 @@ console.log(getAllPropValues('category'));
 
 console.log('------');
 
-// Change code below this line
-function add(...args) {
+const bookShelf = {
+  // Change code below this line
+  books: ['The last kingdom', 'The guardian of dreams'],
+  getBooks() {
+    return 'Returning all books';
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
   // Change code above this line
 
-  let sum = 0;
-  for (i of args) sum += i;
-  return sum;
-}
+  removeBook(bookName) {
+    return `Deleting book ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Updating book ${oldName} to ${newName}`;
+  },
+};
