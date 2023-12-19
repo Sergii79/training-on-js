@@ -404,20 +404,11 @@ console.log(getAllPropValues('category'));
 console.log('------');
 
 const bookShelf = {
-  // Change code below this line
-  books: ['The last kingdom', 'The guardian of dreams'],
-  getBooks() {
-    return 'Returning all books';
-  },
-  addBook(bookName) {
-    return `Adding book ${bookName}`;
-  },
-  // Change code above this line
-
-  removeBook(bookName) {
-    return `Deleting book ${bookName}`;
-  },
+  books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
   updateBook(oldName, newName) {
-    return `Updating book ${oldName} to ${newName}`;
+    // Change code below this line
+    const bookIndex = this.books.indexOf(oldName);
+    this.books.splice(bookIndex, 1, newName);
+    // Change code above this line
   },
 };
