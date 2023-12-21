@@ -426,3 +426,23 @@ console.log(calсulateAverage(1, 2, 3, 4)); // 2.5
 console.log(calсulateAverage(14, 8, 2)); // 8
 console.log(calсulateAverage(27, 43, 2, 8, 36)); // 23.2
 // ```
+
+console.log('------');
+
+function processCall(recipient) {
+  // Імітуємо доступність абонента випадковим числом
+  const isRecipientAvailable = Math.random() > 0.5;
+  console.log(isRecipientAvailable);
+
+  if (!isRecipientAvailable) {
+    console.log(`Абонент ${recipient} недоступний, залиште повідомлення.`);
+    // Логіка активації автовідповідача
+  } else {
+    console.log(`З'єднуємо з ${recipient}, очікуйте...`);
+    // Логіка прийняття дзвінка
+  }
+}
+
+processCall('Манго');
+
+console.log('------');
