@@ -429,16 +429,16 @@ console.log(calсulateAverage(27, 43, 2, 8, 36)); // 23.2
 
 console.log('------');
 
-function processCall(recipient) {
+function processCall(recipientOne) {
   // Імітуємо доступність абонента випадковим числом
   const isRecipientAvailable = Math.random() > 0.5;
   console.log(isRecipientAvailable);
 
   if (!isRecipientAvailable) {
-    console.log(`Абонент ${recipient} недоступний, залиште повідомлення.`);
+    console.log(`Абонент ${recipientOne} недоступний, залиште повідомлення.`);
     // Логіка активації автовідповідача
   } else {
-    console.log(`З'єднуємо з ${recipient}, очікуйте...`);
+    console.log(`З'єднуємо з ${recipientOne}, очікуйте...`);
     // Логіка прийняття дзвінка
   }
 }
@@ -446,3 +446,33 @@ function processCall(recipient) {
 processCall('Манго');
 
 console.log('------');
+
+// function processCall(recipient, onAvailable, onNotAvailable) {
+//   // Імітуємо доступність абонента випадковим числом
+//   const isRecipientAvailable = Math.random() > 0.5;
+
+//   if (!isRecipientAvailable) {
+//     onNotAvailable(recipient);
+//     return;
+//   }
+
+//   onAvailable(recipient);
+// }
+
+// function takeCall(name) {
+//   console.log(`З'єднуємо з ${name}, очікуйте...`);
+//   // Логіка прийняття дзвінка
+// }
+
+// function activateAnsweringMachine(name) {
+//   console.log(`Абонент ${name} недоступний, залиште повідомлення.`);
+//   // Логіка активації автовідповідача
+// }
+
+// function leaveHoloMessage(name) {
+//   console.log(`Абонент ${name} недоступний, записуємо голограму.`);
+//   // Логіка запису голограми
+// }
+
+// processCall('Манго', takeCall, activateAnsweringMachine);
+// processCall('Полі', takeCall, leaveHoloMessage);
