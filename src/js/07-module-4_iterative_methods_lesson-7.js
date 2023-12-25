@@ -447,32 +447,45 @@ processCall('Манго');
 
 console.log('------');
 
-function processCall(recipient, onAvailable, onNotAvailable) {
-  // Імітуємо доступність абонента випадковим числом
-  const isRecipientAvailable = Math.random() > 0.5;
+// function processCall(recipient, onAvailable, onNotAvailable) {
+//   // Імітуємо доступність абонента випадковим числом
+//   const isRecipientAvailable = Math.random() > 0.5;
 
-  if (!isRecipientAvailable) {
-    onNotAvailable(recipient);
-    return;
-  }
+//   if (!isRecipientAvailable) {
+//     onNotAvailable(recipient);
+//     return;
+//   }
 
-  onAvailable(recipient);
+//   onAvailable(recipient);
+// }
+
+// function takeCall(name) {
+//   console.log(`З'єднуємо з ${name}, очікуйте...`);
+//   // Логіка прийняття дзвінка
+// }
+
+// function activateAnsweringMachine(name) {
+//   console.log(`Абонент ${name} недоступний, залиште повідомлення.`);
+//   // Логіка активації автовідповідача
+// }
+
+// function leaveHoloMessage(name) {
+//   console.log(`Абонент ${name} недоступний, записуємо голограму.`);
+//   // Логіка запису голограми
+// }
+
+// processCall('Манго', takeCall, activateAnsweringMachine);
+// processCall('Полі', takeCall, leaveHoloMessage);
+
+// Колбек-функція
+function greet(name) {
+  console.log(`Ласкаво просимо ${name}.`);
 }
 
-function takeCall(name) {
-  console.log(`З'єднуємо з ${name}, очікуйте...`);
-  // Логіка прийняття дзвінка
+// Функція вищого порядку
+function registerGuest(name, callback) {
+  console.log(`Реєструємо гостя ${name}.`);
+  callback(name);
 }
 
-function activateAnsweringMachine(name) {
-  console.log(`Абонент ${name} недоступний, залиште повідомлення.`);
-  // Логіка активації автовідповідача
-}
-
-function leaveHoloMessage(name) {
-  console.log(`Абонент ${name} недоступний, записуємо голограму.`);
-  // Логіка запису голограми
-}
-
-processCall('Манго', takeCall, activateAnsweringMachine);
-processCall('Полі', takeCall, leaveHoloMessage);
+registerGuest('Манго', greet);
