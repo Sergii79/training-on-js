@@ -478,14 +478,14 @@ console.log('------');
 // processCall('Полі', takeCall, leaveHoloMessage);
 
 // Колбек-функція
-function greet(name) {
-  console.log(`Ласкаво просимо ${name}.`);
-}
+// function greet(name) {
+//   console.log(`Ласкаво просимо ${name}.`);
+// }
 
-// Функція вищого порядку
-function registerGuest(name, callback) {
-  console.log(`Реєструємо гостя ${name}.`);
-  callback(name);
-}
+// // Функція вищого порядку
+// function registerGuest(name, callback) {
+//   console.log(`Реєструємо гостя ${name}.`);
+//   callback(name);
+// }
 
-registerGuest('Манго', greet);
+// registerGuest('Манго', greet);
