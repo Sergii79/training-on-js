@@ -25,6 +25,8 @@ function logger(message) {
 // foo(logger)
 // logger()
 
+console.log('---Example 1---');
+
 // ## Example 1 - Коллбек функції
 
 // Напишіть наступні функції:
@@ -51,15 +53,15 @@ function createProduct(obj, callback) {
 }
 
 function logProduct(product) {
-  // console.log(product)
+  console.log(product);
 }
 
 function logTotalPrice(product) {
-  // console.log(product.price * product.quantity)
+  console.log(product.price * product.quantity);
 }
 
 function doubleQuantity({ quantity }) {
-  // console.log(quantity * 2)
+  console.log(quantity * 2);
 }
 
 const product = { name: 'Tomato', price: 10, quantity: 43 };
@@ -67,6 +69,8 @@ createProduct(product, doubleQuantity);
 
 createProduct({ name: '🍎', price: 30, quantity: 3 }, logProduct);
 createProduct({ name: 'Tomato', price: 10, quantity: 43 }, logTotalPrice);
+
+console.log('---Example 2---');
 
 // ## Example 2 - Коллбек функції
 
@@ -129,6 +133,8 @@ createProduct({ name: 'Tomato', price: 10, quantity: 43 }, logTotalPrice);
 // account.deposit(-600, handleSuccess, handleError);
 // account.deposit(600, handleSuccess, handleError);
 // ```
+
+console.log('---Example 3---');
 
 // ## Example 3 - Коллбек функції
 
@@ -477,15 +483,16 @@ console.log('------');
 // processCall('Манго', takeCall, activateAnsweringMachine);
 // processCall('Полі', takeCall, leaveHoloMessage);
 
+console.log('------');
 // Колбек-функція
-// function greet(name) {
-//   console.log(`Ласкаво просимо ${name}.`);
-// }
+function greet(name) {
+  console.log(`Ласкаво просимо ${name}.`);
+}
 
-// // Функція вищого порядку
-// function registerGuest(name, callback) {
-//   console.log(`Реєструємо гостя ${name}.`);
-//   callback(name);
-// }
+// Функція вищого порядку
+function registerGuest(name, callback) {
+  console.log(`Реєструємо гостя ${name}.`);
+  callback(name);
+}
 
-// registerGuest('Манго', greet);
+registerGuest('Манго', greet);
