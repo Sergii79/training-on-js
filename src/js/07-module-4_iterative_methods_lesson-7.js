@@ -85,53 +85,54 @@ console.log('---Example 2---');
 // або дорівнює нулю, і onSuccess в іншому випадку.
 
 // ```js
-// const TRANSACTION_LIMIT = 1000;
+const TRANSACTION_LIMIT_FIRST = 1000;
 
-// const account = {
-//   username: 'Jacob',
-//   balance: 400,
-//   withdraw(amount, onSuccess, onError) {
-//     if (amount > TRANSACTION_LIMIT || amount > this.balance) {
-//       onError({
-//         message: "сталась біда. Ліміт перевищено або грошей нема",
-//         status: "ERROR"
-//       })
-//     } else {
-//       onSuccess({
-//         status: "OK",
-//         message: "Операція withdraw успішна"
-//       })
-//     }
-//   },
-//   deposit(amount, onSuccess, onError) {
-//     if (amount <= 0 || amount > TRANSACTION_LIMIT) {
-//       onError({
-//         message: "Deposit не вдався. Бо сума менше або дорівнює нуль. Або ліміт перевищено",
-//         status: "ERROR DEPOSIT"
-//       })
-//     } else {
-//       onSuccess({
-//         message: 'Все гуд'
-//       })
-//     }
-//   }
-// };
+const accountFirst = {
+  username: 'Jacob',
+  balance: 400,
+  withdraw(amount, onSuccess, onError) {
+    if (amount > TRANSACTION_LIMIT_FIRST || amount > this.balance) {
+      onError({
+        message: 'сталась біда. Ліміт перевищено або грошей нема',
+        status: 'ERROR',
+      });
+    } else {
+      onSuccess({
+        status: 'OK',
+        message: 'Операція withdraw успішна',
+      });
+    }
+  },
+  deposit(amount, onSuccess, onError) {
+    if (amount <= 0 || amount > TRANSACTION_LIMIT_FIRST) {
+      onError({
+        message:
+          'Deposit не вдався. Бо сума менше або дорівнює нуль. Або ліміт перевищено',
+        status: 'ERROR DEPOSIT',
+      });
+    } else {
+      onSuccess({
+        message: 'Все гуд',
+      });
+    }
+  },
+};
 
-// function handleSuccess({message, status = "OK"}) {
-//   console.log(`${status}: ${message}`)
-// }
+function handleSuccess({ message, status = 'OK' }) {
+  console.log(`${status}: ${message}`);
+}
 
-// function handleError({message, status}) {
-//   console.log(`${status}: ${message}`)
-// }
+function handleError({ message, status }) {
+  console.log(`${status}: ${message}`);
+}
 
-// account.withdraw(2000, handleSuccess, handleError);
-// account.withdraw(600, handleSuccess, handleError);
-// account.withdraw(300, handleSuccess, handleError);
-// account.deposit(1700, handleSuccess, handleError);
-// account.deposit(0, handleSuccess, handleError);
-// account.deposit(-600, handleSuccess, handleError);
-// account.deposit(600, handleSuccess, handleError);
+accountFirst.withdraw(2000, handleSuccess, handleError);
+accountFirst.withdraw(600, handleSuccess, handleError);
+accountFirst.withdraw(300, handleSuccess, handleError);
+// accountFirst.deposit(1700, handleSuccess, handleError);
+// accountFirst.deposit(0, handleSuccess, handleError);
+// accountFirst.deposit(-600, handleSuccess, handleError);
+// accountFirst.deposit(600, handleSuccess, handleError);
 // ```
 
 console.log('---Example 3---');
