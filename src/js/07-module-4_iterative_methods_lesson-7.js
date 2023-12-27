@@ -152,30 +152,30 @@ console.log('---Example 3---');
  * 5. Повернути результуючий масив
  */
 
-// function each(array, callback) {
-//   const result = [];
+function each(array, callback) {
+  const result = [];
 
-//   for(let element of array) {
-//     //1
-//     // const el = callback(element);
-//     // result.push(el)
+  for (let element of array) {
+    //1
+    // const el = callback(element);
+    // result.push(el)
 
-//     //2
-//     result.push(callback(element))
-//   }
+    //2
+    result.push(callback(element));
+  }
 
-//   return result
-// }
+  return result;
+}
 
 // ```js
 
-// const numbers = [64, 49, 36, 25, 16];
+const numbers = [64, 49, 36, 25, 16];
 
-// const newNumbers = each(numbers, function (value) {
-//   return value * 2;
-// });
+const newNumbers = each(numbers, function (value) {
+  return value * 2;
+});
 
-// console.log(newNumbers)
+console.log(newNumbers);
 
 // console.log(
 //   each([64, 49, 36, 25, 16], function (value) {
@@ -219,6 +219,8 @@ console.log('---Example 3---');
 
 // ```
 
+console.log('---Example 4---');
+
 // ## Example 4 - Стрілочні функції
 
 // Виконайте рефакторинг коду за допомогою стрілочних функцій.
@@ -249,6 +251,8 @@ const fnName = arg => {
 // createProduct({ name: '🍎', price: 30, quantity: 3 }, logProduct);
 // createProduct({ name: '🍋', price: 20, quantity: 5 }, logTotalPrice);
 // ```
+
+console.log('---Example 5---');
 
 // ## Example 5 - Стрілочні функції
 
@@ -300,6 +304,8 @@ const account = {
 // account.deposit(-600, handleSuccess, handleError);
 // account.deposit(600, handleSuccess, handleError);
 // ```
+
+console.log('---Example 6---');
 
 // ## Example 6 - Інлайн стрілочні функції
 
@@ -356,6 +362,8 @@ function each(array, callback) {
 
 // ```
 
+console.log('---Example 7---');
+
 // ## Example 7 - Метод forEach
 
 // Виконайте рефакторинг коду за допомогою методу `forEach` та стрілочні функції.
@@ -381,6 +389,8 @@ function logItems(items) {
 // logItems(['Mango', 'Poly', 'Ajax']);
 // logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
 // ```
+
+console.log('---Example 8---');
 
 // ## Example 8 - Метод forEach
 
@@ -411,6 +421,8 @@ function printContactsInfo({ names, phones }) {
 //   phones: '89001234567,89001112233,890055566377,890055566300',
 // });
 // ```
+
+console.log('---Example 9---');
 
 // ## Example 9 - Метод forEach
 
