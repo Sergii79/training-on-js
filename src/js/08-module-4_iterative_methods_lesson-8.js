@@ -94,16 +94,16 @@ console.log('---Example 1---');
 // 1
 // const getModels = carsArray => {
 //   const result = carsArray.map(carItem => {
-//     return carItem.model
-//   })
+//     return carItem.model;
+//   });
 
-//   return result
-// }
+//   return result;
+// };
 
 // 2
 const getModels = carsArray => carsArray.map(({ model }) => model);
 
-// console.log(getModels(cars))
+console.log(getModels(cars));
 
 console.log('---Example 2---');
 
