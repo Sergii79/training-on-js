@@ -240,14 +240,15 @@ console.log('---Example 6---');
 // const sortByAscendingAmount = cars => [...cars].sort((a,b) => a.amount - b.amount)
 // console.table(sortByAscendingAmount(cars));
 
-// const numbers = [34, 20, 54, 1, 0];
+const numbers = [34, 20, 54, 1, 0];
 
-// numbers.sort((a,b) => {
-//   if (a > b) return 1;
-//   if (a < b) return -1;
+numbers.sort((a, b) => {
+  if (a > b) return 1;
+  if (a < b) return -1;
 
-//   return 0
-// })
+  return 0;
+});
+console.log(numbers);
 
 // ```
 
@@ -474,3 +475,13 @@ console.log(tagCount);
 
 const array = ['Jacob', 'William', 'Solomon', 'Artemis'];
 console.log(array[2]);
+
+console.log('------');
+
+function makePizza() {
+  return 'Your pizza is being prepared, please wait.';
+}
+// Change code below this line
+
+const result = makePizza();
+const pointer = makePizza;
