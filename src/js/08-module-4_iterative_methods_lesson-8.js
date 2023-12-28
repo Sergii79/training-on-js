@@ -478,10 +478,16 @@ console.log(array[2]);
 
 console.log('------');
 
-function makePizza() {
-  return 'Your pizza is being prepared, please wait.';
+function makePizza(pizzaName, callback) {
+  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+  callback(pizzaName);
 }
+
+makePizza('Royal Grand', function deliverPizza(pizzaName) {
+  console.log(`Delivering pizza ${pizzaName}.`);
+});
 // Change code below this line
 
-const result = makePizza();
-const pointer = makePizza;
+makePizza('Ultracheese', function eatPizza(pizzaName) {
+  console.log(`Eating pizza ${pizzaName}.`);
+});
