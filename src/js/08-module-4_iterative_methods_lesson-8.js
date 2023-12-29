@@ -478,31 +478,22 @@ console.log(array[2]);
 
 console.log('------');
 
-const pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
 
-  order(pizzaName, onSuccess, onError) {
-    if (this.pizzas.includes(pizzaName)) return onSuccess(pizzaName);
-    return onError(
-      `There is no pizza with a name ${pizzaName} in the assortment.`
-    );
-  },
-};
-// Change code above this line
+  // for (let i = 0; i < numbers.length; i += 1) {
+  //   if (numbers[i] > value) {
+  //     filteredNumbers.push(numbers[i]);
+  //   }
+  // }
 
-// Callback for onSuccess
-function makePizza(pizzaName, onSuccess) {
-  onSuccess;
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+  numbers.forEach(function (number) {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  });
+
+  // Change code above this line
+  return filteredNumbers;
 }
-
-// Callback for onError
-function onOrderError(error, onError) {
-  return `Error! ${error}`;
-}
-
-// Method calls with callbacks
-pizzaPalace.order('Smoked', makePizza, onOrderError);
-pizzaPalace.order('Four meats', makePizza, onOrderError);
-pizzaPalace.order('Big Mike', makePizza, onOrderError);
-pizzaPalace.order('Vienna', makePizza, onOrderError);
