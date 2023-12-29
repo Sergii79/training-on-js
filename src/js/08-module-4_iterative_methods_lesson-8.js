@@ -478,22 +478,16 @@ console.log(array[2]);
 
 console.log('------');
 
-function filterArray(numbers, value) {
-  const filteredNumbers = [];
-  // Change code below this line
+// // Change code below this line
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
 
-  // for (let i = 0; i < numbers.length; i += 1) {
-  //   if (numbers[i] > value) {
-  //     filteredNumbers.push(numbers[i]);
-  //   }
-  // }
+//   numbers.forEach(number => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
 
-  numbers.forEach(function (number) {
-    if (number > value) {
-      filteredNumbers.push(number);
-    }
-  });
-
-  // Change code above this line
-  return filteredNumbers;
-}
+//   // Change code above this line
+//   return filteredNumbers;
+// };
