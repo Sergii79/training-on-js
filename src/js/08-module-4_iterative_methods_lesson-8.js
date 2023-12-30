@@ -478,16 +478,16 @@ console.log(array[2]);
 
 console.log('------');
 
-// // Change code below this line
-// const filterArray = (numbers, value) => {
-//   const filteredNumbers = [];
+// Change code below this line
+const getCommonElements = (firstArray, secondArray) => {
+  const commonElements = [];
 
-//   numbers.forEach(number => {
-//     if (number > value) {
-//       filteredNumbers.push(number);
-//     }
-//   });
+  firstArray.forEach(element => {
+    if (secondArray.includes(element)) {
+      commonElements.push(element);
+    }
+  });
 
-//   // Change code above this line
-//   return filteredNumbers;
-// };
+  // Change code above this line
+  return commonElements;
+};
