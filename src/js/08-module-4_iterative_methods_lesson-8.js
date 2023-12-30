@@ -482,22 +482,21 @@ const books = [
   {
     title: 'The Last Kingdom',
     author: 'Bernard Cornwell',
-    rating: 8.38,
+    genres: ['adventure', 'history'],
   },
   {
     title: 'Beside Still Waters',
     author: 'Robert Sheckley',
-    rating: 8.51,
+    genres: ['fiction', 'mysticism'],
   },
   {
-    title: 'The Dream of a Ridiculous Man',
-    author: 'Fyodor Dostoevsky',
-    rating: 7.75,
+    title: 'Redder Than Blood',
+    author: 'Tanith Lee',
+    genres: ['horror', 'mysticism', 'adventure'],
   },
-  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
-  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
 ];
 // Change code below this line
-
-const titles = books.map(book => book.title);
-console.log(titles);
+const allGenres = books.flatMap(book => book.genres);
+const uniqueGenres = allGenres.filter(
+  (genre, index, array) => array.indexOf(genre) === index
+);
