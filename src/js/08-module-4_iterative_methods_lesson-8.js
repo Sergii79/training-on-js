@@ -495,12 +495,10 @@ const books = [
     rating: 7.75,
   },
   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
-  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
 ];
-
-const MIN_RATING = 8;
-const AUTHOR = 'Bernard Cornwell';
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR = 'Robert Sheckley';
 // Change code below this line
 
-const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
-const booksByAuthor = books.filter(book => book.author === AUTHOR);
+const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+const bookByAuthor = books.find(book => book.author === AUTHOR);
