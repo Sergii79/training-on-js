@@ -478,14 +478,14 @@ console.log(array[2]);
 
 console.log('------');
 
-const players = [
-  { name: 'Mango', playtime: 1270, gamesPlayed: 4 },
-  { name: 'Poly', playtime: 469, gamesPlayed: 2 },
-  { name: 'Ajax', playtime: 690, gamesPlayed: 3 },
-  { name: 'Kiwi', playtime: 241, gamesPlayed: 1 },
-];
 // Change code below this line
+const getTotalFriendCount = users => {
+  return users.reduce((total, friend) => total + friend.friends.length, 0);
+};
+// Change code above this line
 
-const totalAveragePlaytimePerGame = players.reduce((previousValue, item) => {
-  return previousValue + item.playtime / item.gamesPlayed;
-}, 0);
+// const getTotalFriendCount = users => {
+//       return users.reduce((acc, user)=>{
+//      return acc + user.friends.length
+//   },0)
+// };
