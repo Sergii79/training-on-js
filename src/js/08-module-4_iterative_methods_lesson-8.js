@@ -479,8 +479,30 @@ console.log(array[2]);
 console.log('------');
 
 // Change code below this line
+// const getTotalBalanceByGender = (users, gender) => {
+//   return [...users]
+//     .filter(item => item.gender === gender)
+//     .reduce((previousValue, number) => (previousValue += number.balance), 0);
+// };
+
 const getTotalBalanceByGender = (users, gender) => {
-  return [...users]
-    .filter(item => item.gender === gender)
-    .reduce((previousValue, number) => (previousValue += number.balance), 0);
+  return users
+    .filter(user => user.gender === gender)
+    .reduce((total, user) => {
+      return total + user.balance;
+    }, 0);
 };
+
+const bookShelf = {
+  authors: ['Бернард Корнуелл', 'Роберт Шеклі'],
+  getAuthors() {
+    return this.authors;
+  },
+  addAuthor(authorName) {
+    this.authors.push(authorName);
+  },
+};
+
+console.log(bookShelf.getAuthors()); // ["Бернард Корнуелл", "Роберт Шеклі"]
+bookShelf.addAuthor('Лі Таніт');
+console.log(bookShelf.getAuthors()); // ["Бернард Корнуелл", "Роберт Шеклі", "Лі Таніт"]
