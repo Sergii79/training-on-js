@@ -506,12 +506,3 @@ const bookShelf = {
 console.log(bookShelf.getAuthors()); // ["Бернард Корнуелл", "Роберт Шеклі"]
 bookShelf.addAuthor('Лі Таніт');
 console.log(bookShelf.getAuthors()); // ["Бернард Корнуелл", "Роберт Шеклі", "Лі Таніт"]
-
-const animal = {
-  legs: 4,
-};
-const dog = Object.create(animal);
-dog.name = 'Манго';
-
-console.log(dog); // { name: 'Манго', __proto__: animal }
-console.log(animal.isPrototypeOf(dog)); // true
