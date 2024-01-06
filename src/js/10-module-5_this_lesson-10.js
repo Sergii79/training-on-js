@@ -140,11 +140,11 @@ class Storage {
 }
 
 // // ```js
-// const storage = new Storage(['🍎', '🍋', '🍇', '🍑']);
-// const items = storage.getItems();
-// console.table(items); // [ '🍎', '🍋', '🍇', '🍑' ]
+const storage = new Storage(['🍎', '🍋', '🍇', '🍑']);
+const items = storage.getItems();
+console.table(items); // [ '🍎', '🍋', '🍇', '🍑' ]
 
-// storage.addItem('🍌');
+storage.addItem('🍌');
 // // console.table(storage.items); // [ '🍎', '🍋', '🍇', '🍑', '🍌' ]
 
 // storage.removeItem('🍋');
@@ -194,18 +194,18 @@ const mango = new User({
   email: 'mango@dog.woof',
 });
 
-// console.log(mango.login); // Mango
-// mango.login = 'dodo';
-// console.log(mango.login); // Mangodoge
+console.log(mango.login); // Mango
+mango.login = 'dodo';
+console.log(mango.login); // Mangodoge
 
-// const poly = new User({
-//   login: 'Poly',
-//   email: 'poly@mail.com',
-// });
+const polyNew = new User({
+  login: 'Poly',
+  email: 'poly@mail.com',
+});
 
-// console.log(poly.login); // Poly
-// poly.login = 'Polycutie';
-// console.log(poly.login); // Polycutie
+console.log(polyNew.login); // Poly
+polyNew.login = 'Polycutie';
+console.log(polyNew.login); // Polycutie
 // ```
 
 console.log('---Example 4---');
@@ -316,3 +316,23 @@ console.log(secondToggle.on);
 secondToggle.toggle();
 console.log(secondToggle.on);
 console.groupEnd('secondToggle');
+
+console.log('---Example---');
+
+const pizzaPalace = {
+  pizzas: ['Supercheese', 'Smoked', 'Four meats'],
+  // Change code below this line
+  checkPizza(pizzaName) {
+    return this.pizzas.includes(pizzaName);
+  },
+  order(pizzaName) {
+    const isPizzaAvailable = this.checkPizza(pizzaName);
+
+    if (!isPizzaAvailable) {
+      return `Sorry, there is no pizza named «${pizzaName}»`;
+    }
+
+    return `Order accepted, preparing «${pizzaName}» pizza`;
+  },
+  // Change code above this line
+};
