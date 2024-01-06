@@ -59,7 +59,7 @@ class Blogger {
     this.topics = topics;
   }
 
-  staticgetInfo() {
+  getInfo() {
     return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`;
   }
 
@@ -75,11 +75,11 @@ const blogger = new Blogger({
   topics: ['tech', 'cooking'],
 });
 
-// console.log(blogger)
+console.log(blogger);
 
-// console.log(blogger.getInfo());
-// blogger.updatePostCount(10);
-// console.log(blogger.getInfo());
+console.log(blogger.getInfo());
+blogger.updatePostCount(10);
+console.log(blogger.getInfo());
 
 // ```js
 // const mango = new User({
