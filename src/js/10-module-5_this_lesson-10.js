@@ -408,32 +408,25 @@ storageNew.removeItem('Prolonger');
 console.log(storageNew.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 class Car {
+  static #MAX_PRICE = 50000;
   // Change code below this line
-  static MAX_PRICE = 50000;
-  #price;
 
-  constructor({ price }) {
-    this.#price = price;
-  }
-
-  get price() {
-    return this.#price;
-  }
-
-  set price(newPrice) {
-    if (newPrice > Car.MAX_PRICE) {
-      return;
+  static checkPrice(price) {
+    if (price > Car.#MAX_PRICE) {
+      return 'Error! Price exceeds the maximum';
+    } else {
+      return 'Success! Price is within acceptable limits';
     }
-    this.#price = newPrice;
   }
+
   // Change code above this line
+  constructor({ price }) {
+    this.price = price;
+  }
 }
 
-const audi = new Car({ price: 35000 });
-console.log(audi.price); // 35000
+const audi = new Car({ price: 36000 });
+const bmw = new Car({ price: 64000 });
 
-audi.price = 49000;
-console.log(audi.price); // 49000
-
-audi.price = 51000;
-console.log(audi.price); // 49000
+console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
