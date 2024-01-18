@@ -337,39 +337,6 @@ console.log('---Example---');
 //   // Change code above this line
 // };
 
-const parent = {
-  name: 'Stacey',
-  surname: 'Moore',
-  age: 54,
-  heritage: 'Irish',
-};
-// Change code below this line
-
-const child = Object.create(parent);
-
-// Change code above this line
-child.name = 'Jason';
-child.age = 27;
-
-class Car {
-  constructor({ brand, model, price }) {
-    this.brand = brand;
-    this.model = model;
-    this.price = price;
-  }
-  // Change code below this line
-
-  getPrice() {
-    return this.price;
-  }
-
-  changePrice(newPrice) {
-    this.price = newPrice;
-  }
-
-  // Change code above this line
-}
-
 class StorageNew {
   constructor(items) {
     this.items = items;
@@ -407,26 +374,24 @@ console.log(storageNew.getItems()); // ["Nanitoids", "Prolonger", "Antigravitato
 storageNew.removeItem('Prolonger');
 console.log(storageNew.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
-class Car {
-  static #MAX_PRICE = 50000;
-  // Change code below this line
-
-  static checkPrice(price) {
-    if (price > Car.#MAX_PRICE) {
-      return 'Error! Price exceeds the maximum';
-    } else {
-      return 'Success! Price is within acceptable limits';
-    }
+class User {
+  constructor(email) {
+    this.email = email;
   }
 
-  // Change code above this line
-  constructor({ price }) {
-    this.price = price;
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
   }
 }
+// Change code below this line
 
-const audi = new Car({ price: 36000 });
-const bmw = new Car({ price: 64000 });
-
-console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
-console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+class Admin extends User {
+  static AccessLevel = {
+    BASIC: 'basic',
+    SUPERUSER: 'superuser',
+  };
+}
