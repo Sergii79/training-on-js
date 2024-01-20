@@ -337,42 +337,42 @@ console.log('---Example---');
 //   // Change code above this line
 // };
 
-class StorageNew {
-  constructor(items) {
-    this.items = items;
-  }
+// class StorageNew {
+//   constructor(items) {
+//     this.items = items;
+//   }
 
-  getItems() {
-    return this.items;
-  }
+//   getItems() {
+//     return this.items;
+//   }
 
-  addItem(newItem) {
-    this.items.push(newItem);
-  }
+//   addItem(newItem) {
+//     this.items.push(newItem);
+//   }
 
-  removeItem(itemToRemove) {
-    for (let i = 0; i < this.items.length; i += 1) {
-      if (this.items[i].includes(itemToRemove)) {
-        this.items.splice(i, 1);
-      }
-    }
-  }
+//   removeItem(itemToRemove) {
+//     for (let i = 0; i < this.items.length; i += 1) {
+//       if (this.items[i].includes(itemToRemove)) {
+//         this.items.splice(i, 1);
+//       }
+//     }
+//   }
 
-  removeItem(itemToRemove) {
-    const indexToRemove = this.items.indexOf(itemToRemove);
-    if (indexToRemove !== -1) {
-      this.items.splice(indexToRemove, 1);
-    }
-  }
-}
+//   removeItem(itemToRemove) {
+//     const indexToRemove = this.items.indexOf(itemToRemove);
+//     if (indexToRemove !== -1) {
+//       this.items.splice(indexToRemove, 1);
+//     }
+//   }
+// }
 
-// Change code above this line
-const storageNew = new StorageNew(['Nanitoids', 'Prolonger', 'Antigravitator']);
-console.log(storageNew.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storageNew.addItem('Droid');
-console.log(storageNew.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storageNew.removeItem('Prolonger');
-console.log(storageNew.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+// // Change code above this line
+// const storageNew = new StorageNew(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storageNew.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storageNew.addItem('Droid');
+// console.log(storageNew.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storageNew.removeItem('Prolonger');
+// console.log(storageNew.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 // class User {
 //   email;
