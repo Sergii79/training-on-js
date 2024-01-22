@@ -6,23 +6,23 @@ const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
 const container = document.querySelector('#main-container');
 const ulEl = document.createElement('ul');
 
-const techElements = technologies.map(el => `<li>${el}</li>`).join('');
+// const techElements = technologies.map(el => `<li>${el}</li>`).join('');
 
-// technologies.forEach(technologyItem => {
-//   // const liEl = document.createElement('li');
-//   // liEl.textContent = technologyItem;
-//   // ulEl.append(liEl)
+technologies.forEach(technologyItem => {
+  const liEl = document.createElement('li');
+  liEl.textContent = technologyItem;
+  ulEl.append(liEl);
 
-//   const liEl = `<li>${technologyItem}</li>`;
-//   ulEl.insertAdjacentHTML('afterbegin', liEl);
-// });
+  //   const liEl = `<li>${technologyItem}</li>`;
+  //   ulEl.insertAdjacentHTML('afterbegin', liEl);
+});
 
 // const techElements = technologies.reduce(
 //   (acum, el) => (acum += `<li>${el}</li>`),
 //   ''
 // );
 
-ulEl.innerHTML = techElements;
+// ulEl.innerHTML = techElements;
 
 container.append(ulEl);
 
@@ -64,6 +64,8 @@ colors.forEach(({ color, label }) => {
 });
 
 container.append(buttonsContainer);
+
+console.log('---Example 3---');
 
 //3. Створити сайт з такою розміткою використовуючи лише JS в html файлі має бути пусто
 const data = {
@@ -147,3 +149,5 @@ elementsTest.forEach(element => {
   console.log('Elemnt', element.firstElementChild);
   // console.log(`Elemnt: ${element.firstElementChild}`);
 });
+
+console.log('------');
