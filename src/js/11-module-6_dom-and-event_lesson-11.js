@@ -26,6 +26,24 @@ technologies.forEach(technologyItem => {
 
 container.append(ulEl);
 
+console.log('------');
+
+const car = ['Mercedes', 'BMW', 'Woltswagen', 'Opel', 'Porse'];
+console.log(car);
+
+const carContainer = document.querySelector('#main-container');
+
+const carUl = document.createElement('Ul');
+
+const carElements = car.reduce(
+  (acum, element) => (acum += `<li>${element}</li>`),
+  ''
+);
+console.log(carElements);
+
+carUl.innerHTML = carElements;
+carContainer.append(carUl);
+
 console.log('---Example 2---');
 
 //Example 2. Створити кілька кнопок на основі масива з обєктами використовуючи createElement
