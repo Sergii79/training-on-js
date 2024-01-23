@@ -135,10 +135,6 @@ asideContainer.insertAdjacentHTML(
         <div id="intro">
             <p>&bull; Michel Legrand (1932 - 2019) was a famous French musician. &bull;</p>
         </div>
-        <div class="test"><p>1</p></div>
-        <div class="test"><p>2</p></div>
-        <div class="test"><p>3</p></div>
-        <div class="test"><p>4</p></div>
         <p><u>Here are some major facts about him:</u></p>
         <ul>
             ${data.facts.reduce(
