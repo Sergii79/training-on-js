@@ -11,31 +11,86 @@
     3. Захаркодити вірні логін і пароль в константах
  */
 
-// const credentials = {
-//   correctLogin: 'admin',
-//   correctPassword: '123qwerty',
+console.log('---Перший варіант відкривання модалки---');
+// /** Шукаємо елементи */
+// const btnElem = document.querySelector('#myBtn');
+// const modalElem = document.querySelector('#myModal');
+// const closeModalBtn = document.querySelector('.close');
+
+// /** Функція відкривання модалки при натисканні на кнопку Open Modal */
+// const openModalHandler = event => {
+//   console.log('button clicked', event);
+//   modalElem.style.display = 'block';
 // };
+
+// /** Функція закривання модалки при натисканні на кнопку cloce */
+// const closeModalHandler = event => {
+//   console.log('modal cloce', event);
+//   console.log(event.target);
+//   console.log(event.currentTarget);
+//   if (event.currentTarget === event.target) {
+//     modalElem.style.display = 'none';
+//   }
+// };
+
+// /** Додати в модалку логіку закриття при натисканні на кнопку Escape */
+// document.addEventListener('keydown', event => {
+//   if (event.code === 'Escape') {
+//     modalElem.style.display = 'none';
+//   }
+// });
+
+// /** Вішаємо слухача на події */
+// btnElem.addEventListener('click', openModalHandler);
+// closeModalBtn.addEventListener('click', closeModalHandler);
+// modalElem.addEventListener('click', closeModalHandler);
+
+console.log('---Другий варіант відкривання модалки---');
+
+/** Шукаємо елементи */
 const btnElem = document.querySelector('#myBtn');
 const modalElem = document.querySelector('#myModal');
 const closeModalBtn = document.querySelector('.close');
 
-const openModalHandler = event => {
-  console.log('button clicked', event);
-  modalElem.style.display = 'block';
-};
+/** Створюємо клас з медодами відкривання та закривання модалки */
+class Modal {
+  constructor(element) {
+    this.element = element;
+  }
 
+  open() {
+    this.element.style.display = 'block';
+  }
+
+  close() {
+    this.element.style.display = 'none';
+  }
+}
+
+const modal = new Modal(modalElem);
+
+/** Функція відкривання модалки при натисканні на кнопку Open Modal */
+const openModalHandler = event => modal.open();
+
+/** Функція закривання модалки при натисканні на кнопку cloce */
 const closeModalHandler = event => {
-  console.log('modal cloce', event);
-  console.log(event.target);
-  console.log(event.currentTarget);
   if (event.currentTarget === event.target) {
-    modalElem.style.display = 'none';
+    modal.close();
   }
 };
 
+/** Додати в модалку логіку закриття при натисканні на кнопку Escape */
+document.addEventListener('keydown', event => {
+  if (event.code === 'Escape') {
+    modal.close();
+  }
+});
+
+/** Вішаємо слухача на події */
 btnElem.addEventListener('click', openModalHandler);
 closeModalBtn.addEventListener('click', closeModalHandler);
 modalElem.addEventListener('click', closeModalHandler);
+
 // const modalContentElem = document.querySelector('.modal-content');
 
 // const newForm = createForm();
@@ -58,6 +113,11 @@ modalElem.addEventListener('click', closeModalHandler);
 // }
 
 // const modal = new Modal(modalElem);
+
+// const credentials = {
+//   correctLogin: 'admin',
+//   correctPassword: '123qwerty',
+// };
 
 // function createForm() {
 //   const formElem = document.createElement('form');
