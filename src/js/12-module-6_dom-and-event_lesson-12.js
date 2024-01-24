@@ -47,10 +47,16 @@ console.log('---Перший варіант відкривання модалк�
 
 console.log('---Другий варіант відкривання модалки---');
 
+const credentials = {
+  correctLogin: 'admin',
+  correctPassword: '123qwerty',
+};
+
 /** Шукаємо елементи */
 const btnElem = document.querySelector('#myBtn');
 const modalElem = document.querySelector('#myModal');
 const closeModalBtn = document.querySelector('.close');
+const modalContentElem = document.querySelector('.modal-content');
 
 /** Створюємо клас з медодами відкривання та закривання модалки */
 class Modal {
@@ -70,7 +76,29 @@ class Modal {
 const modal = new Modal(modalElem);
 
 /** Функція відкривання модалки при натисканні на кнопку Open Modal */
-const openModalHandler = event => modal.open();
+// const openModalHandler = event => modal.open();
+
+// Так робити погано;
+const openModalHandler = event => {
+  const formElem = document.createElement('form');
+  const nameInput = document.createElement('input');
+  const passwordInput = document.createElement('input');
+  const submitBtn = document.createElement('button');
+
+  nameInput.name = 'login';
+  passwordInput.name = 'password';
+  passwordInput.type = 'password';
+  submitBtn.type = 'submit';
+  submitBtn.textContent = 'Ok';
+
+  formElem.append(nameInput);
+  formElem.append(passwordInput);
+  formElem.append(submitBtn);
+
+  modalContentElem.append(formElem);
+
+  modal.open();
+};
 
 /** Функція закривання модалки при натисканні на кнопку cloce */
 const closeModalHandler = event => {
@@ -91,28 +119,17 @@ btnElem.addEventListener('click', openModalHandler);
 closeModalBtn.addEventListener('click', closeModalHandler);
 modalElem.addEventListener('click', closeModalHandler);
 
-// const modalContentElem = document.querySelector('.modal-content');
+console.log('---Форма реєстрації---');
+
+/**
+ * 3. Створити форму реєстрації користувача за допомогою js де буде 2 поля 
+    1. Поле логіна
+    2. Поле пароль
+    3. Захаркодити вірні логін і пароль в константах
+ */
 
 // const newForm = createForm();
 // modalContentElem.append(newForm);
-
-// class Modal {
-//   constructor(element) {
-//     this.element = element;
-//   }
-
-//   open() {
-//     this.element.style.display = 'block';
-//   }
-
-//   close() {
-//     this.element.style.display = 'none';
-//     btnElem.removeEventListener('click', openModalHandler);
-//     btnElem.remove();
-//   }
-// }
-
-// const modal = new Modal(modalElem);
 
 // const credentials = {
 //   correctLogin: 'admin',
@@ -137,30 +154,6 @@ modalElem.addEventListener('click', closeModalHandler);
 
 //   return formElem;
 // }
-
-// const openModalHandler = event => {
-//   modal.open();
-// };
-
-// const closeModalHandler = event => {
-//   console.log('target', event.target);
-//   console.log('currentTarget', event.currentTarget);
-
-//   if (event.currentTarget === event.target) {
-//     modal.close();
-//   }
-// };
-
-// btnElem.addEventListener('click', openModalHandler);
-// closeModalBtn.addEventListener('click', closeModalHandler);
-// modalElem.addEventListener('click', closeModalHandler);
-
-// /** Додати в модалку логіку закриття при натисканні на кнопку Escape */
-// document.addEventListener('keydown', event => {
-//   if (event.code === 'Escape') {
-//     modal.close();
-//   }
-// });
 
 /**
  * 4. Додати логіку сабміта форми, при сабміті перевіряємо введені логін і пароль.
