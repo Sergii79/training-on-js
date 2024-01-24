@@ -15,16 +15,28 @@
 //   correctLogin: 'admin',
 //   correctPassword: '123qwerty',
 // };
-const modalHandler = e => {
-  console.log('button clicked');
+const btnElem = document.querySelector('#myBtn');
+const modalElem = document.querySelector('#myModal');
+const closeModalBtn = document.querySelector('.close');
+
+const openModalHandler = event => {
+  console.log('button clicked', event);
+  modalElem.style.display = 'block';
 };
 
-const btnElem = document.querySelector('#myBtn');
+const closeModalHandler = event => {
+  console.log('modal cloce', event);
+  console.log(event.target);
+  console.log(event.currentTarget);
+  if (event.currentTarget === event.target) {
+    modalElem.style.display = 'none';
+  }
+};
 
-btnElem.addEventListener('click', modalHandler);
-// const modalElem = document.querySelector('#myModal');
+btnElem.addEventListener('click', openModalHandler);
+closeModalBtn.addEventListener('click', closeModalHandler);
+modalElem.addEventListener('click', closeModalHandler);
 // const modalContentElem = document.querySelector('.modal-content');
-// const closeModalBtn = document.querySelector('.close');
 
 // const newForm = createForm();
 // modalContentElem.append(newForm);
