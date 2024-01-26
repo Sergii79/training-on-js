@@ -58,6 +58,10 @@ const modalElem = document.querySelector('#myModal');
 const closeModalBtn = document.querySelector('.close');
 const modalContentElem = document.querySelector('.modal-content');
 
+/** Отримання форми і додавання в DOM  */
+const newForm = createForm();
+modalContentElem.append(newForm);
+
 /** Створюємо клас з медодами відкривання та закривання модалки */
 class Modal {
   constructor(element) {
@@ -75,11 +79,8 @@ class Modal {
 
 const modal = new Modal(modalElem);
 
-/** Функція відкривання модалки при натисканні на кнопку Open Modal */
-// const openModalHandler = event => modal.open();
-
-// Так робити погано;
-const openModalHandler = event => {
+/** Логіка створення форми в окремій функції */
+function createForm() {
   const formElem = document.createElement('form');
   const nameInput = document.createElement('input');
   const passwordInput = document.createElement('input');
@@ -95,8 +96,33 @@ const openModalHandler = event => {
   formElem.append(passwordInput);
   formElem.append(submitBtn);
 
-  modalContentElem.append(formElem);
+  return formElem;
+}
 
+/** Функція відкривання модалки при натисканні на кнопку Open Modal */
+
+// Так робити погано;
+// const openModalHandler = event => {
+//   const formElem = document.createElement('form');
+//   const nameInput = document.createElement('input');
+//   const passwordInput = document.createElement('input');
+//   const submitBtn = document.createElement('button');
+
+//   nameInput.name = 'login';
+//   passwordInput.name = 'password';
+//   passwordInput.type = 'password';
+//   submitBtn.type = 'submit';
+//   submitBtn.textContent = 'Ok';
+
+//   formElem.append(nameInput);
+//   formElem.append(passwordInput);
+//   formElem.append(submitBtn);
+
+//   modalContentElem.append(formElem);
+
+//   modal.open();
+// };
+const openModalHandler = event => {
   modal.open();
 };
 
@@ -119,61 +145,24 @@ btnElem.addEventListener('click', openModalHandler);
 closeModalBtn.addEventListener('click', closeModalHandler);
 modalElem.addEventListener('click', closeModalHandler);
 
-console.log('---Форма реєстрації---');
-
-/**
- * 3. Створити форму реєстрації користувача за допомогою js де буде 2 поля 
-    1. Поле логіна
-    2. Поле пароль
-    3. Захаркодити вірні логін і пароль в константах
- */
-
-// const newForm = createForm();
-// modalContentElem.append(newForm);
-
-// const credentials = {
-//   correctLogin: 'admin',
-//   correctPassword: '123qwerty',
-// };
-
-// function createForm() {
-//   const formElem = document.createElement('form');
-//   const nameInput = document.createElement('input');
-//   const passwordInput = document.createElement('input');
-//   const submitBtn = document.createElement('button');
-
-//   nameInput.name = 'login';
-//   passwordInput.name = 'password';
-//   passwordInput.type = 'password';
-//   submitBtn.type = 'submit';
-//   submitBtn.textContent = 'Ok';
-
-//   formElem.append(nameInput);
-//   formElem.append(passwordInput);
-//   formElem.append(submitBtn);
-
-//   return formElem;
-// }
-
 /**
  * 4. Додати логіку сабміта форми, при сабміті перевіряємо введені логін і пароль.
         1. Якщо логін і пароль співпадають - видаляємо форму з документа і показуємо **h2**  з написом **“Вхід успішний”**
         2. Якщо логі і пароль не співпадають з даними з констант в пункті 3с - показуємо під формою помилку червоним кольором **“Логін або пароль не вірні”**
  */
+
+/** Перший варіант */
+
 // newForm.addEventListener('submit', event => {
 //   event.preventDefault();
 
-//   // const {
-//   //   elements: { login, password },
-//   // } = event.currentTarget;
-
-//   const data = {};
-//   const formData = new FormData(event.currentTarget);
-//   formData.forEach((value, name) => (data[name] = value));
+//   const {
+//     elements: { login, password },
+//   } = event.currentTarget;
 
 //   if (
-//     data.login === credentials.correctLogin &&
-//     data.password === credentials.correctPassword
+//     login.value === credentials.correctLogin &&
+//     password.value === credentials.correctPassword
 //   ) {
 //     newForm.remove();
 //     modalContentElem.insertAdjacentHTML('beforeend', `<h2>Вхід успішний</h2>`);
@@ -183,7 +172,34 @@ console.log('---Форма реєстрації---');
 //       `<p style="color: red">Логін або пароль не вірні</p>`
 //     );
 //   }
+
+//   console.log(login.value);
+//   console.log(password.value);
+
 // });
+
+/** Другий варіант */
+
+newForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const data = {};
+  const formData = new FormData(event.currentTarget);
+  formData.forEach((value, name) => (data[name] = value));
+
+  if (
+    data.login === credentials.correctLogin &&
+    data.password === credentials.correctPassword
+  ) {
+    newForm.remove();
+    modalContentElem.insertAdjacentHTML('beforeend', `<h2>Вхід успішний</h2>`);
+  } else {
+    newForm.insertAdjacentHTML(
+      'beforeend',
+      `<p style="color: red">Логін або пароль не вірні</p>`
+    );
+  }
+});
 
 /**QA */
 //1
