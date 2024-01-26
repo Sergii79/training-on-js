@@ -153,43 +153,16 @@ modalElem.addEventListener('click', closeModalHandler);
 
 /** Перший варіант */
 
-// newForm.addEventListener('submit', event => {
-//   event.preventDefault();
-
-//   const {
-//     elements: { login, password },
-//   } = event.currentTarget;
-
-//   if (
-//     login.value === credentials.correctLogin &&
-//     password.value === credentials.correctPassword
-//   ) {
-//     newForm.remove();
-//     modalContentElem.insertAdjacentHTML('beforeend', `<h2>Вхід успішний</h2>`);
-//   } else {
-//     newForm.insertAdjacentHTML(
-//       'beforeend',
-//       `<p style="color: red">Логін або пароль не вірні</p>`
-//     );
-//   }
-
-//   console.log(login.value);
-//   console.log(password.value);
-
-// });
-
-/** Другий варіант */
-
 newForm.addEventListener('submit', event => {
   event.preventDefault();
 
-  const data = {};
-  const formData = new FormData(event.currentTarget);
-  formData.forEach((value, name) => (data[name] = value));
+  const {
+    elements: { login, password },
+  } = event.currentTarget;
 
   if (
-    data.login === credentials.correctLogin &&
-    data.password === credentials.correctPassword
+    login.value === credentials.correctLogin &&
+    password.value === credentials.correctPassword
   ) {
     newForm.remove();
     modalContentElem.insertAdjacentHTML('beforeend', `<h2>Вхід успішний</h2>`);
@@ -199,7 +172,33 @@ newForm.addEventListener('submit', event => {
       `<p style="color: red">Логін або пароль не вірні</p>`
     );
   }
+
+  console.log(login.value);
+  console.log(password.value);
 });
+
+/** Другий варіант */
+
+// newForm.addEventListener('submit', event => {
+//   event.preventDefault();
+
+//   const data = {};
+//   const formData = new FormData(event.currentTarget);
+//   formData.forEach((value, name) => (data[name] = value));
+
+//   if (
+//     data.login === credentials.correctLogin &&
+//     data.password === credentials.correctPassword
+//   ) {
+//     newForm.remove();
+//     modalContentElem.insertAdjacentHTML('beforeend', `<h2>Вхід успішний</h2>`);
+//   } else {
+//     newForm.insertAdjacentHTML(
+//       'beforeend',
+//       `<p style="color: red">Логін або пароль не вірні</p>`
+//     );
+//   }
+// });
 
 /**QA */
 //1
