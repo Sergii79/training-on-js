@@ -140,11 +140,6 @@ document.addEventListener('keydown', event => {
   }
 });
 
-/** Вішаємо слухача на події */
-btnElem.addEventListener('click', openModalHandler);
-closeModalBtn.addEventListener('click', closeModalHandler);
-modalElem.addEventListener('click', closeModalHandler);
-
 /**
  * 4. Додати логіку сабміта форми, при сабміті перевіряємо введені логін і пароль.
         1. Якщо логін і пароль співпадають - видаляємо форму з документа і показуємо **h2**  з написом **“Вхід успішний”**
@@ -202,30 +197,30 @@ newForm.addEventListener('submit', event => {
 
 /**QA */
 //1
-// const select = document.querySelector('.pizza-select');
-// const textOutput = document.querySelector('.text-output');
-// const valueOutput = document.querySelector('.value-output');
+const select = document.querySelector('.pizza-select');
+const textOutput = document.querySelector('.text-output');
+const valueOutput = document.querySelector('.value-output');
 
-// setOutput();
+setOutput();
 
-// select.addEventListener('change', setOutput);
+select.addEventListener('change', setOutput);
 
-// function setOutput() {
-//   const selectedOptionValue = select.value;
-//   const selectedOptionIndex = select.selectedIndex;
-//   const selectedOptionText = select.options[selectedOptionIndex].text;
+function setOutput() {
+  const selectedOptionValue = select.value;
+  const selectedOptionIndex = select.selectedIndex;
+  const selectedOptionText = select.options[selectedOptionIndex].text;
 
-//   textOutput.textContent = selectedOptionText;
-//   valueOutput.textContent = selectedOptionValue;
-// }
+  textOutput.textContent = selectedOptionText;
+  valueOutput.textContent = selectedOptionValue;
+}
 
 //2
-// const textInput = document.querySelector('.text-input');
-// const output = document.querySelector('.output');
+const textInput = document.querySelector('.text-input');
+const output = document.querySelector('.output');
 
-// textInput.addEventListener('input', (event) => {
-//   output.textContent = event.currentTarget.value;
-// });
+textInput.addEventListener('input', event => {
+  output.textContent = event.currentTarget.value;
+});
 
 //3
 // const textInput = document.querySelector('.text-input');
@@ -247,3 +242,8 @@ newForm.addEventListener('submit', event => {
 // textInput.addEventListener('blur', () => {
 //   textInput.value = '';
 // });
+
+/** Вішаємо слухача на події */
+btnElem.addEventListener('click', openModalHandler);
+closeModalBtn.addEventListener('click', closeModalHandler);
+modalElem.addEventListener('click', closeModalHandler);
