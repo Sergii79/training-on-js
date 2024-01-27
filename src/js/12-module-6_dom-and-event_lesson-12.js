@@ -195,6 +195,11 @@ newForm.addEventListener('submit', event => {
 //   }
 // });
 
+/** Вішаємо слухача на події */
+btnElem.addEventListener('click', openModalHandler);
+closeModalBtn.addEventListener('click', closeModalHandler);
+modalElem.addEventListener('click', closeModalHandler);
+
 /**QA */
 //1
 const select = document.querySelector('.pizza-select');
@@ -223,27 +228,22 @@ textInput.addEventListener('input', event => {
 });
 
 //3
-// const textInput = document.querySelector('.text-input');
-// const setFocusBtn = document.querySelector('[data-action="set"]');
-// const removeFocusBtn = document.querySelector('[data-action="remove"]');
+const textInputNew = document.querySelector('.text-input-new');
+const setFocusBtn = document.querySelector('[data-action="set"]');
+const removeFocusBtn = document.querySelector('[data-action="remove"]');
 
-// setFocusBtn.addEventListener('click', () => {
-//   textInput.focus();
-// });
+setFocusBtn.addEventListener('click', () => {
+  textInputNew.focus();
+});
 
-// removeFocusBtn.addEventListener('click', () => {
-//   textInput.blur();
-// });
+removeFocusBtn.addEventListener('click', () => {
+  textInputNew.blur();
+});
 
-// textInput.addEventListener('focus', () => {
-//   textInput.value = 'This input has focus';
-// });
+textInputNew.addEventListener('focus', () => {
+  textInputNew.value = 'This input has focus';
+});
 
-// textInput.addEventListener('blur', () => {
-//   textInput.value = '';
-// });
-
-/** Вішаємо слухача на події */
-btnElem.addEventListener('click', openModalHandler);
-closeModalBtn.addEventListener('click', closeModalHandler);
-modalElem.addEventListener('click', closeModalHandler);
+textInputNew.addEventListener('blur', () => {
+  textInputNew.value = '';
+});
