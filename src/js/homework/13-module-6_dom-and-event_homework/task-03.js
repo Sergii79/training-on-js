@@ -15,16 +15,7 @@ const images = [
 
 const container = document.querySelector('.gallery');
 
-const showImages = images
-  .map(
-    image =>
-      `<li class="imgTaskThree"><img src="${image.url}" alt="${image.alt}" width="300" height="200"></img></li>`
-    // `<li class="item"><img src="${image.url}" alt="${image.alt}"></img></li>`
-    // `<li class="item"><img src="${image.url}" alt="${image.alt}"></li>`
-  )
-  .join('');
-
-container.insertAdjacentHTML('beforeend', showImages);
+//* 1-й варіант:
 
 images.forEach(imageItem => {
   const liElement = document.createElement('img');
@@ -33,3 +24,14 @@ images.forEach(imageItem => {
   liElement.classList.add('item');
   container.append(liElement);
 });
+
+//* 2-й варіант:
+
+const showImages = images
+  .map(
+    image =>
+      `<li class="imgTaskThree"><img src="${image.url}" alt="${image.alt}" width="300" height="200"></img></li>`
+  )
+  .join('');
+
+container.insertAdjacentHTML('beforeend', showImages);
