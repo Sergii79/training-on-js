@@ -1,1 +1,0 @@
-{"mappings":"AASAA,QAAQC,IAAI","sources":["src/js/homework/13-module-6_dom-and-event_homework/task-02.js"],"sourcesContent":["const ingredients = [\n  'Potatoes',\n  'Mushrooms',\n  'Garlic',\n  'Tomatos',\n  'Herbs',\n  'Condiments',\n];\n\nconsole.log('Hello!');\n"],"names":["console","log"],"version":3,"file":"task-02.02e1737c.js.map"}
