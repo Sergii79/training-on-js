@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="/src/css/homework/13-module-6_dom-and-event_homework/common.css"
     />
+    <style>
+      #text {
+        /* font-size: 50px; Початковий розмір тексту */
+        transition: font-size 0.3s ease-in-out; /* Анімація зміни розміру тексту */
+      }
+    </style>
   </head>
   <body>
     <p>
@@ -18,7 +24,6 @@
     </p>
 
     <input id="font-size-control" type="range" min="16" max="96" />
-    <br />
     <span id="text">Abracadabra!</span>
 
     <script
