@@ -30,7 +30,7 @@ images.forEach(imageItem => {
 const showImages = images
   .map(
     image =>
-      `<li class="imgTaskThree"><img src="${image.url}" alt="${image.alt}" width="300" height="200"></img></li>`
+      `<li class="imgElement"><img src="${image.url}" alt="${image.alt}" width="300" height="200"></img></li>`
   )
   .join('');
 
