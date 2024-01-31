@@ -1,3 +1,5 @@
+//* 1-й варіант:
+
 // const registerForm = document.querySelector('.login-form');
 
 // console.log(registerForm);
@@ -17,7 +19,7 @@
 
 // registerForm.addEventListener('submit', handleSubmit);
 
-//* 1-й варіант:
+//* 2-й варіант:
 
 // const form = document.querySelector('.login-form');
 // console.log(form);
@@ -38,7 +40,7 @@
 
 // form.addEventListener('submit', handleSubmit);
 
-//* 2-й варіант:
+//* 3-й варіант:
 
 const form = document.querySelector('.login-form');
 
