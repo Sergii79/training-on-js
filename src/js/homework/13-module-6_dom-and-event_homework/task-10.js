@@ -8,7 +8,6 @@ function getRandomHexColor() {
 
 const box = {
   content: document.getElementById('boxes'),
-  forma: document.getElementById('controls'),
   input: document.querySelector('[type="number"]'),
   buttonCreate: document.querySelector('button[data-create]'),
   buttonDestroy: document.querySelector('button[data-destroy]'),
