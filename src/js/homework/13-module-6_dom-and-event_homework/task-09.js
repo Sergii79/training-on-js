@@ -8,7 +8,7 @@ const colorElement = document.querySelector('body');
 const buttonElem = document.querySelector('.change-color');
 const colorNumber = document.querySelector('.color');
 
-//* 1-й варіант тіла функції:
+//* 1-й варіант:
 const backgroundChange = () => {
   const changeColor = getRandomHexColor();
   colorElement.style.backgroundColor = changeColor;
