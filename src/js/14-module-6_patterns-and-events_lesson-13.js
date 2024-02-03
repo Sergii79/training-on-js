@@ -74,6 +74,7 @@ formElem.addEventListener('input', event => {
     elements: { price, quantity },
   } = event.currentTarget;
 
+  quantityElem.textContent = quantity.value;
   // if (event.target.id === 'quantity') {
   //   quantityElem.textContent = event.target.value;
   // }
