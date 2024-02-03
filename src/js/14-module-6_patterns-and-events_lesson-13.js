@@ -66,28 +66,43 @@ console.log(result); // 5
 const formElem = document.querySelector('.form');
 const quantityElem = document.querySelector('.amount');
 
-formElem.insertAdjacentHTML(
-  'beforeend',
-  `<div>Загальна вартість <code id="resultVal"></code> ГРН</div>`
-);
+const resultElement = document.createElement('div');
 
-const resultValueElem = document.getElementById('resultVal');
-
-const formHandler = () => {
+formElem.addEventListener('input', event => {
+  // console.log(event.target);
   const {
     elements: { price, quantity },
-  } = formElem;
+  } = event.currentTarget;
 
-  quantityElem.textContent = quantity.value;
+  // if (event.target.id === 'quantity') {
+  //   quantityElem.textContent = event.target.value;
+  // }
+  console.log(price, quantity);
+  // console.log(event.currentTarget.elements);
+});
 
-  const result = quantity.value * price.value;
-  resultValueElem.textContent = result.toFixed(2);
-};
+// formElem.insertAdjacentHTML(
+//   'beforeend',
+//   `<div>Загальна вартість <code id="resultVal"></code> ГРН</div>`
+// );
 
-formElem.addEventListener('input', formHandler);
+// const resultValueElem = document.getElementById('resultVal');
+
+// const formHandler = () => {
+//   const {
+//     elements: { price, quantity },
+//   } = formElem;
+
+//   quantityElem.textContent = quantity.value;
+
+//   const result = quantity.value * price.value;
+//   resultValueElem.textContent = result.toFixed(2);
+// };
+
+// formElem.addEventListener('input', formHandler);
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Window#events
-window.addEventListener('DOMContentLoaded', formHandler);
+// window.addEventListener('DOMContentLoaded', formHandler);
 
 /** GALLERY */
 const images = [
