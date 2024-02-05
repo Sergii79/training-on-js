@@ -56,6 +56,8 @@ function getRandomHexColor() {
 const result = _.add(2, 3);
 console.log(result); // 5
 
+console.log('---CALCULATOR---');
+
 /** CALCULATOR */
 
 // 1. Отримати елемент контейнера(форма). Повішати слухач input
@@ -66,44 +68,46 @@ console.log(result); // 5
 const formElem = document.querySelector('.form');
 const quantityElem = document.querySelector('.amount');
 
-const resultElement = document.createElement('div');
+formElem.insertAdjacentHTML(
+  'beforeend',
+  `<div>Загальна вартість <code id="resultVal"></code> ГРН</div>`
+);
 
-formElem.addEventListener('input', event => {
-  // console.log(event.target);
-  const {
-    elements: { price, quantity },
-  } = event.currentTarget;
+const resultValueElem = document.getElementById('resultVal');
 
-  quantityElem.textContent = quantity.value;
-  // if (event.target.id === 'quantity') {
-  //   quantityElem.textContent = event.target.value;
-  // }
-  console.log(price, quantity);
-  // console.log(event.currentTarget.elements);
-});
-
-// formElem.insertAdjacentHTML(
-//   'beforeend',
-//   `<div>Загальна вартість <code id="resultVal"></code> ГРН</div>`
-// );
-
-// const resultValueElem = document.getElementById('resultVal');
-
-// const formHandler = () => {
+// formElem.addEventListener('input', event => {
+//   // console.log(event.target);
 //   const {
 //     elements: { price, quantity },
-//   } = formElem;
+//   } = event.currentTarget;
 
 //   quantityElem.textContent = quantity.value;
+//   console.log(price, quantity);
+//   // console.log(event.currentTarget.elements);
+//   resultValueElem.textContent = (quantity.value * price.value).toFixed(2);
+// });
 
-//   const result = quantity.value * price.value;
-//   resultValueElem.textContent = result.toFixed(2);
-// };
+// document.addEventListener('DOMContentLoaded', () => {
+//   console.log(quantityElem.textContent);
+// });
 
-// formElem.addEventListener('input', formHandler);
+const formHandler = () => {
+  const {
+    elements: { price, quantity },
+  } = formElem;
+
+  quantityElem.textContent = quantity.value;
+
+  const result = quantity.value * price.value;
+  resultValueElem.textContent = result.toFixed(2);
+};
+
+formElem.addEventListener('input', formHandler);
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Window#events
-// window.addEventListener('DOMContentLoaded', formHandler);
+window.addEventListener('DOMContentLoaded', formHandler);
+
+console.log('---GALLERY---');
 
 /** GALLERY */
 const images = [
