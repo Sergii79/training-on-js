@@ -164,6 +164,8 @@ document.addEventListener('keydown', e => {
   }
 });
 
+console.log('---freeCodeCamp---');
+
 /** freeCodeCamp  */
 // Setup
 const recordCollection = {
