@@ -414,8 +414,5 @@ galleryContainer.insertAdjacentHTML(
 // galleryContainer.append(listGallery);
 // listGallery.insertAdjacentHTML('beforeend', imgElements);
 
-// listGallery.innerHTML = imgElements;
-// galleryContainer.insertAdjacentHTML('beforeend', listGallery);
-
 const observer = lozad();
 observer.observe();
