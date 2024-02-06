@@ -8,15 +8,20 @@ console.log('Hello!');
  * https://css-tricks.com/debouncing-throttling-explained-examples/
  */
 
-const scrollAmountRef = document.querySelector('.scroll-amount');
-const resizeAmountRef = document.querySelector('.resize-amount');
+//------------Тренування:
+// window.addEventListener('resize', () => {
+//   console.log('resize');
+// });
 
-const throttledResize = _.throttle(() => {
-  const currentAmount = +resizeAmountRef.textContent;
-  resizeAmountRef.textContent = currentAmount + 1;
-}, 1000);
+// window.addEventListener('scroll', () => {
+//   console.log('scroll');
+// });
 
-window.addEventListener('resize', throttledResize);
+const throttledScrollNew = _.throttle(() => {
+  console.log('scroll');
+}, 500);
+
+window.addEventListener('scroll', throttledScrollNew);
 
 // this two approaches equals
 // window.addEventListener(
@@ -25,6 +30,31 @@ window.addEventListener('resize', throttledResize);
 //     console.log('scroll');
 //   }, 500)
 // );
+
+const throttledResizeNew = _.throttle(() => {
+  console.log('resize');
+}, 1000);
+
+window.addEventListener('resize', throttledResizeNew);
+//-----------------------
+
+const scrollAmountRef = document.querySelector('.scroll-amount');
+const resizeAmountRef = document.querySelector('.resize-amount');
+
+const throttledScroll = _.throttle(() => {
+  const currentAmount = +scrollAmountRef.textContent;
+  scrollAmountRef.textContent = currentAmount + 1;
+}, 500);
+
+const throttledResize = _.throttle(() => {
+  const currentAmount = +resizeAmountRef.textContent;
+  resizeAmountRef.textContent = currentAmount + 1;
+}, 1000);
+
+window.addEventListener('scroll', throttledScroll);
+window.addEventListener('resize', throttledResize);
+
+//------------
 
 const userNameRef = document.getElementById('userName');
 const userPwdRef = document.getElementById('userPassword');
@@ -386,13 +416,6 @@ galleryContainer.insertAdjacentHTML(
 
 // listGallery.innerHTML = imgElements;
 // galleryContainer.insertAdjacentHTML('beforeend', listGallery);
-
-const throttledScroll = _.throttle(() => {
-  const currentAmount = +scrollAmountRef.textContent;
-  scrollAmountRef.textContent = currentAmount + 1;
-}, 500);
-
-window.addEventListener('scroll', throttledScroll);
 
 const observer = lozad();
 observer.observe();
