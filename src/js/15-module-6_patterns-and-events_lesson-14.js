@@ -5,7 +5,9 @@ console.log('Hello!');
  * throttle - викликає функцию кожні N мілісекунд впродов дії події.
  * Обидва методи повертають нову функцію
  *
+ * https://api.jquery.com/
  * https://css-tricks.com/debouncing-throttling-explained-examples/
+ * https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/
  */
 
 //------------Тренування:
@@ -414,5 +416,6 @@ galleryContainer.insertAdjacentHTML(
 // galleryContainer.append(listGallery);
 // listGallery.insertAdjacentHTML('beforeend', imgElements);
 
+// https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/
 const observer = lozad();
 observer.observe();
