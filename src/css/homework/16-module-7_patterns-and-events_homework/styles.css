@@ -42,3 +42,11 @@
 .gallery__link:hover {
   cursor: zoom-in;
 }
+
+.basicLightbox {
+  z-index: 999999999999 !important; /* або будь-яке інше високе значення */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
