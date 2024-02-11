@@ -41,10 +41,17 @@
 // });
 
 //*-------------------------------
+//Установка библиотеки через npm, script тогда не нужен, только стили
+// import * as basicLightbox from 'basiclightbox';
+
+//Библиотека модальных окон:
+//https://www.jsdelivr.com/package/npm/basiclightbox?path=dist
+//https://basiclightbox.electerious.com/
+//https://github.com/electerious/basicLightbox#readme
 
 import { galleryItems } from './gallery-items.js';
 
-const galleryBox = document.querySelector('.gallery');
+const galleryСontainer = document.querySelector('.gallery');
 
 // Обробка галереї в html
 const showGalleryItems = galleryItems
@@ -63,7 +70,7 @@ const showGalleryItems = galleryItems
   })
   .join('');
 
-galleryBox.insertAdjacentHTML('afterbegin', showGalleryItems);
+galleryСontainer.insertAdjacentHTML('afterbegin', showGalleryItems);
 
 // Функція створення модального вікна
 function onGalleryContainerClick(event) {
@@ -79,7 +86,7 @@ function onGalleryContainerClick(event) {
   showBigImg(originalLink);
 }
 
-galleryBox.addEventListener('click', onGalleryContainerClick);
+galleryСontainer.addEventListener('click', onGalleryContainerClick);
 
 // Посилання на відкриття модального вікна https://basiclightbox.electerious.com
 function showBigImg(link) {
