@@ -54,10 +54,25 @@ import { galleryItems } from './gallery-items.js';
 const galleryСontainer = document.querySelector('.gallery');
 
 // Обробка галереї в html
-const showGalleryItems = galleryItems
-  .map(({ preview, original, description }) => {
-    return `
-    <div class="gallery__item">
+// const galleryCreate = galleryItems
+//   .map(({ preview, original, description }) => {
+//     return `
+//     <div class="gallery__item">
+//     <a class="gallery__link"
+//     href="${original}">
+//     <img class="gallery__image"
+//     src="${preview}"
+//     data-source="${original}"
+//     alt="${description}">
+//     </img>
+//     </a>
+//     </div>`;
+//   })
+//   .join('');
+
+const galleryCreate = galleryItems.reduce(
+  (acum, { preview, original, description }) => {
+    return (acum += `<div class="gallery__item">
     <a class="gallery__link"
     href="${original}">
     <img class="gallery__image"
@@ -66,11 +81,12 @@ const showGalleryItems = galleryItems
     alt="${description}">
     </img>
     </a>
-    </div>`;
-  })
-  .join('');
+    </div>`);
+  },
+  ''
+);
 
-galleryСontainer.insertAdjacentHTML('afterbegin', showGalleryItems);
+galleryСontainer.insertAdjacentHTML('afterbegin', galleryCreate);
 
 // Функція створення модального вікна
 function onGalleryContainerClick(event) {
@@ -86,13 +102,13 @@ function onGalleryContainerClick(event) {
   showBigImg(originalLink);
 }
 
-galleryСontainer.addEventListener('click', onGalleryContainerClick);
-
 // Посилання на відкриття модального вікна https://basiclightbox.electerious.com
 function showBigImg(link) {
   const instance = basicLightbox.create(`
-    <img src="${link}">
-`);
+  <img src="${link}">
+  `);
 
   instance.show();
 }
+
+galleryСontainer.addEventListener('click', onGalleryContainerClick);
