@@ -44,11 +44,6 @@
 //Установка библиотеки через npm, script тогда не нужен, только стили
 // import * as basicLightbox from 'basiclightbox';
 
-//Библиотека модальных окон:
-//https://www.jsdelivr.com/package/npm/basiclightbox?path=dist
-//https://basiclightbox.electerious.com/
-//https://github.com/electerious/basicLightbox#readme
-
 import { galleryItems } from './gallery-items.js';
 
 const galleryСontainer = document.querySelector('.gallery');
@@ -102,7 +97,11 @@ function onGalleryContainerClick(event) {
   showBigImg(originalLink);
 }
 
-// Посилання на відкриття модального вікна https://basiclightbox.electerious.com
+//Библиотека модальных окон:
+//https://www.jsdelivr.com/package/npm/basiclightbox?path=dist
+//https://basiclightbox.electerious.com/
+//https://github.com/electerious/basicLightbox#readme
+
 function showBigImg(link) {
   const instance = basicLightbox.create(`
   <img src="${link}">
