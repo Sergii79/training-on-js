@@ -1,46 +1,3 @@
-// import * as basicLightbox from 'basiclightbox';
-
-// import { galleryItems } from './gallery-items.js';
-// // Change code below this line
-
-// console.log(galleryItems);
-
-// const containerGallery = document.querySelector('.gallery');
-
-// const createGallery = galleryItems.reduce((acum, item) => {
-//   return (acum += `<li><img src="${item.preview}" title="${item.description}"></li>`);
-// }, '');
-
-// containerGallery.insertAdjacentHTML('beforeend', createGallery);
-
-// //Библиотека модальных окон:
-// //https://www.jsdelivr.com/package/npm/basiclightbox?path=dist
-// //https://basiclightbox.electerious.com/
-
-// const createModalWindow = (original, description) => {
-//   return basicLightbox.create(
-//     `<img src="${original}" alt="${description}" width="800" height="600">`
-//   );
-// };
-
-// // createModalWindow.show();
-
-// // containerGallery.addEventListener('click', createModalWindow);
-
-// containerGallery.addEventListener('click', event => {
-//   event.preventDefault();
-//   if (event.target.nodeName !== 'IMG') {
-//     return;
-//   }
-
-//   const imageSrc = event.target.getAttribute('src');
-//   const imageDescription = event.target.getAttribute('title');
-
-//   const modal = createModalWindow(imageSrc, imageDescription);
-//   modal.show();
-// });
-
-//*-------------------------------
 //Установка библиотеки через npm, script тогда не нужен, только стили
 // import * as basicLightbox from 'basiclightbox';
 
@@ -83,10 +40,11 @@ const galleryCreate = galleryItems.reduce(
 
 galleryСontainer.insertAdjacentHTML('afterbegin', galleryCreate);
 
-// Функція створення модального вікна
+// Функція відповідає за обробку події кліку на контейнері галереї
 function onGalleryContainerClick(event) {
   event.preventDefault();
 
+  // Перевіряється, чи клікнули на зображення в галереї. Це робиться за допомогою перевірки класу цільового елемента, який був клікнутий. Якщо цей елемент має клас gallery__image, це означає, що клік був на зображенні, тому код продовжує виконуватися.
   const isImg = event.target.classList.contains('gallery__image');
   if (!isImg) {
     return;
@@ -102,12 +60,29 @@ function onGalleryContainerClick(event) {
 //https://basiclightbox.electerious.com/
 //https://github.com/electerious/basicLightbox#readme
 
+// Функція створення модального вікна
 function showBigImg(link) {
+  // Спочатку створюється екземпляр модального вікна за допомогою функції basicLightbox.create()
   const instance = basicLightbox.create(`
   <img src="${link}">
   `);
 
+  // Метод щоб відобразити модальне вікно на екрані.
   instance.show();
+
+  // Далі додається обробник події keydown на весь документ. Це означає, що функція onKeyDown буде викликана кожен раз, коли буде натиснута будь-яка клавіша на клавіатурі.
+  document.addEventListener('keydown', onKeyDown);
+
+  // У функції onKeyDown перевіряється, чи були натиснуті клавіші ESC або Enter
+  function onKeyDown(event) {
+    // Перевірка чи натиснута клавіша ESC або Enter
+    if (event.code === 'Escape' || event.code === 'Enter') {
+      // Якщо так, то викликається метод instance.close(), щоб закрити модальне вікно
+      instance.close(); // Закрити модальне вікно
+      // Після закриття модального вікна, обробник події keydown видаляється з документа, щоб уникнути зайвих викликів функції onKeyDown.
+      document.removeEventListener('keydown', onKeyDown); // Видалити обробник події
+    }
+  }
 }
 
 galleryСontainer.addEventListener('click', onGalleryContainerClick);
