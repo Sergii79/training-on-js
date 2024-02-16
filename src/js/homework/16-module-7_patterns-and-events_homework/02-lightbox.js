@@ -21,3 +21,13 @@ const galleryCreate = galleryItems.reduce(
 
 galleryContainer.insertAdjacentHTML('afterbegin', galleryCreate);
 // galleryContainer.addEventListener('click', openGallery);
+
+var lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 350,
+  animationSpeed: 350,
+  navText: ['⤌', '⤍'],
+  closeText: '×',
+  scrollZoomFactor: 1,
+  scrollZoom: true,
+});

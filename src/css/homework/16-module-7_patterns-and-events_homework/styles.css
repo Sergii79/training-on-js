@@ -42,3 +42,20 @@
 .gallery__link:hover {
   cursor: zoom-in;
 }
+
+/* Стилізація тексту навігаційних елементів */
+.sl-next,
+.sl-prev,
+.sl-close,
+.sl-counter {
+  color: #454e46 !important;
+}
+
+.sl-next:hover,
+.sl-prev:hover,
+.sl-close:hover,
+.sl-next:focus,
+.sl-prev:focus,
+.sl-close:focus {
+  color: #288d33 !important;
+}
