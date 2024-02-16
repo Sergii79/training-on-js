@@ -24,16 +24,16 @@ const galleryСontainer = document.querySelector('.gallery');
 
 const galleryCreate = galleryItems.reduce(
   (acum, { preview, original, description }) => {
-    return (acum += `<div class="gallery__item">
+    return (acum += `<li class="gallery__item">
     <a class="gallery__link"
     href="${original}">
     <img class="gallery__image"
     src="${preview}"
     data-source="${original}"
     alt="${description}">
-    </img>
+    />
     </a>
-    </div>`);
+    </li>`);
   },
   ''
 );
