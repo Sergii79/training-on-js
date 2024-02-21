@@ -6,37 +6,37 @@ import { galleryItems } from './gallery-items.js';
 const galleryСontainer = document.querySelector('.gallery');
 
 // Обробка галереї в html
-const galleryCreate = galleryItems
-  .map(({ preview, original, description }) => {
-    return `
-    <div class="gallery__item">
-    <a class="gallery__link"
-    href="${original}">
-    <img class="gallery__image"
-    src="${preview}"
-    data-source="${original}"
-    alt="${description}">
-    </img>
-    </a>
-    </div>`;
-  })
-  .join('');
-
-// const galleryCreate = galleryItems.reduce(
-//   (acum, { preview, original, description }) => {
-//     return (acum += `<li class="gallery__item">
+// const galleryCreate = galleryItems
+//   .map(({ preview, original, description }) => {
+//     return `
+//     <div class="gallery__item">
 //     <a class="gallery__link"
 //     href="${original}">
 //     <img class="gallery__image"
 //     src="${preview}"
 //     data-source="${original}"
 //     alt="${description}">
-//     />
+//     </img>
 //     </a>
-//     </li>`);
-//   },
-//   ''
-// );
+//     </div>`;
+//   })
+//   .join('');
+
+const galleryCreate = galleryItems.reduce(
+  (acum, { preview, original, description }) => {
+    return (acum += `<li class="gallery__item">
+    <a class="gallery__link"
+    href="${original}">
+    <img class="gallery__image"
+    src="${preview}"
+    data-source="${original}"
+    alt="${description}">
+    />
+    </a>
+    </li>`);
+  },
+  ''
+);
 
 galleryСontainer.insertAdjacentHTML('afterbegin', galleryCreate);
 

@@ -22,6 +22,9 @@ const galleryCreate = galleryItems.reduce(
 galleryContainer.insertAdjacentHTML('afterbegin', galleryCreate);
 // galleryContainer.addEventListener('click', openGallery);
 
+//Библиотека модальных окон:
+// https://cdnjs.com/libraries/simplelightbox
+// https://simplelightbox.com/
 var lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 350,
